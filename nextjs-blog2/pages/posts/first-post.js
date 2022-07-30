@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import Script from 'next/script';
+import Layout from "../../components/layout";
 
-export default function FirstPost() {
+export default () => {
 
     return (
 
-      <div>
+      <Layout>
         <Head>
           <title>
             First post 
@@ -23,13 +24,14 @@ export default function FirstPost() {
 
 
       <h1>First Post</h1>
-      <Link className="link" href="/"><a>back to home</a></Link>
       <Image 
         src="/images/profile.jpeg"
         height={144}
         width={144}
         alt="Your Name" 
       />
+
+      <div>This is my frist post.</div>
 
       <style jsx>{`
         div{
@@ -41,7 +43,7 @@ export default function FirstPost() {
         }
       `}
       </style>
-      </div>
+      </Layout>
 
     )
     
