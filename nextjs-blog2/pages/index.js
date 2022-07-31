@@ -17,14 +17,13 @@ export default function Home() {
         Read{' '}
         <Link href="/posts/first-post"><a>This page</a></Link>
       </h1>
-        <p>It will be my timer app</p>
+        <p>
+          Hello, I am backend dev with 5 years experience, wanna be frontend dev now. I'm learning react.
+          This is my first Next.js app, Next.js looks awesome!
+        </p>
         
         <Alert type="error">this is alert</Alert>
         <Window></Window>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
       </section>
     </Layout>
   );

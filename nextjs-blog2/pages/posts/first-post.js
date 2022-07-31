@@ -10,9 +10,7 @@ export default () => {
 
       <Layout>
         <Head>
-          <title>
-            First post 
-          </title>
+          <title>First post</title>
           <Script
         src="https://connect.facebook.net/en_US/sdk.js"
         strategy="lazyOnload"
@@ -33,16 +31,6 @@ export default () => {
 
       <div>This is my frist post.</div>
 
-      <style jsx>{`
-        div{
-          background-color: yellow;
-        }
-
-        .link{
-          color:red;
-        }
-      `}
-      </style>
       </Layout>
 
     )
