@@ -19,7 +19,7 @@ const CalcMain = (props) => {
 
   return (
     <div>
-      <h1>Hours calc</h1>
+      <h1 className={st.header}>Hours calc</h1>
 
       <div className={st.container}>
         <label>Date</label>
@@ -62,7 +62,7 @@ const CalcMain = (props) => {
       <div>
         <div>Expected at the end: {resp && resp.expected}</div>
         <div>Expected until now: {resp && resp.expectedUntilNow} </div>
-        <div>Current: {resp && resp.current} </div>
+        <div>Current total: {resp && resp.total} </div>
       </div>
     </div>
   );

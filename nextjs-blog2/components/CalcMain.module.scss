@@ -1,3 +1,8 @@
+.header{
+  color: orange;
+  text-align: center;
+}
+
 .container {
   color: brown;
 
@@ -23,5 +28,12 @@
 
   .row:hover {
     background-color: aliceblue;
+  }
+
+  td:hover {
+    background-color: lightblue;
+  }
+  td:active {
+    background-color:rgb(255, 225, 156);
   }
 }

@@ -52,6 +52,6 @@ export const getWorktimes = () => {
     ],
     expected: 168,
     expectedUntilNow: 40,
-    current: 5,
+    total: 5,
   };
 };
