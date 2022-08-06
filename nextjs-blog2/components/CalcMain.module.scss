@@ -1,29 +1,27 @@
 .container {
-    color: brown;
+  color: brown;
 
-    #time {
-        width: 2.1em;
-        color: blue;
-    }
-    
+  #time {
+    width: 2.1em;
+    color: blue;
+  }
 }
 
+.table {
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
 
-.table{
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      td, th {
-        border: 1px solid #4b4242;
-        text-align: left;
-        padding: 8px;
-      } 
+  td,
+  th {
+    border: 1px solid #4b4242;
+    text-align: left;
+    padding: 8px;
+  }
 
-      .row:hover{
-        background-color: aliceblue;
-
-      }
+  .row:hover {
+    background-color: aliceblue;
+  }
 }
