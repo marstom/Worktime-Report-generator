@@ -49,15 +49,16 @@ const CalcMain = (props) => {
                 </thead>
             <tbody>
                 {
-                    resp && resp.currnetMonth.map(el => (
-                        <tr key={el.id} className={st.row}>
-                            <td>{el.date}</td>
-                            <td>{el.description}</td>
-                            <td>{el.time}</td>
-                            <td></td>
-                        </tr>
-
-                    ))
+                    resp && resp.currnetMonth.map(day => {
+                        return day.entrys.map((entry) => (
+                            <tr key={`${day.id} ${entry.id}`} className={st.row}>
+                                <td>{entry.id === 1 ? day.date : ''}</td>
+                                <td>{entry.description}</td>
+                                <td>{entry.time}</td>
+                                <td>{entry.id === 1 ? day.total : ''}</td>
+                            </tr>
+                        ))
+                    })
                 }
             </tbody>
             </table>
