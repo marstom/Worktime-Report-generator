@@ -9,29 +9,21 @@
 }
 
 
-.description {
+.table{
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #4b4242;
+        text-align: left;
+        padding: 8px;
+      } 
 
-}
+      .row:hover{
+        background-color: aliceblue;
 
-
-.flexTable{
-    display: grid;
-
-    .dayContainer{
-        width: 80%;
-        position: inherit;
-        display: flex;
-        gap:1px;
-        flex-flow: row wrap;
-        flex-basis: auto;
-    }
-
-    .item{
-        align-self: flex-start;
-        background-color: aqua;
-        flex-grow: 1;
-        border-color: black;
-        border-style: solid;
-        margin-bottom: 1px;
-    }
+      }
 }

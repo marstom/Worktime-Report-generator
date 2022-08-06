@@ -25,22 +25,35 @@ const CalcMain = (props) => {
             </div>
 
             <h3>day</h3>
-            <div className={st.flexTable}>
-                <div className={st.dayContainer}>
-                    <div className={st.item}>Time</div>
-                    <div className={st.item}>Description</div>
-                    <div className={st.item}>Sum</div>
-                </div>
-                <div className={st.dayContainer}>
-                    <div className={st.item}>Entyrr</div>
-                    <div className={st.item}>Entyrr</div>
-                    <div className={st.item}>Entyrr</div>
-                </div>
-            </div>
+            <table className={st.table}>
+                <thead>
+
+                    <tr>
+                        <th>Description</th>
+                        <th>Time</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr className={st.row}>
+                    <td>Alfreds Futterkiste</td>
+                    <td>2:00</td>
+                    <td>8:00</td>
+                </tr>
+                <tr className={st.row}>
+                    <td>bot-11 add button asdf dsa fadsf af fd a</td>
+                    <td>2:00</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            </table>
         
 
             <h3 className={st.item}>month</h3>
             <div>
+                <div>Expected at the end: </div>
+                <div>Expected until now: </div>
+                <div>Current: </div>
 
             </div>
         </div>
