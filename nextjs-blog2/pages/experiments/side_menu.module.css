@@ -1,0 +1,40 @@
+.containter{
+    color:rgb(8, 87, 144);
+    margin-left: 25%;
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+
+.sideMenu{
+    background-color: lightgray;
+    position: fixed;
+    width: 250px; 
+    z-index: 1;  /* on top */
+    top:0;
+    left:0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    height: 100%;
+}
+
+.sideMenu a {
+    padding: 8px 8px 8px 32px;
+    display: block; /* one after another */
+    transition: 0.3s;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sideMenu a:hover {
+    color: #f1f1f1;
+  }
+
+.sideMenu .closeButton{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
