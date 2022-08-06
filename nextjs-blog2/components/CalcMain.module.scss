@@ -1,0 +1,30 @@
+.container {
+    color: brown;
+
+    #time {
+        width: 2.1em;
+        color: blue;
+    }
+    
+}
+
+
+.description {
+
+}
+
+.dayContainer{
+    display: flex;
+    gap:25px 20px;
+    flex-flow: row wrap;
+    flex-basis: auto;
+
+    .item{
+        align-self: flex-start;
+        background-color: aqua;
+        flex-shrink: 2;
+        flex-grow: 2;
+        order:3;
+
+    }
+}
