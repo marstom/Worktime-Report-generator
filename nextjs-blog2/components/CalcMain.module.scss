@@ -13,18 +13,25 @@
 
 }
 
-.dayContainer{
-    display: flex;
-    gap:25px 20px;
-    flex-flow: row wrap;
-    flex-basis: auto;
+
+.flexTable{
+    display: grid;
+
+    .dayContainer{
+        width: 80%;
+        position: inherit;
+        display: flex;
+        gap:1px;
+        flex-flow: row wrap;
+        flex-basis: auto;
+    }
 
     .item{
         align-self: flex-start;
         background-color: aqua;
-        flex-shrink: 2;
-        flex-grow: 2;
-        order:3;
-
+        flex-grow: 1;
+        border-color: black;
+        border-style: solid;
+        margin-bottom: 1px;
     }
 }

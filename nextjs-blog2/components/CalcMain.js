@@ -27,9 +27,9 @@ const CalcMain = (props) => {
             <h3>day</h3>
             <div className={st.flexTable}>
                 <div className={st.dayContainer}>
-                    <div className={st.item}>Entyrr</div>
-                    <div className={st.item}>Entyrr</div>
-                    <div className={st.item}>Entyrr</div>
+                    <div className={st.item}>Time</div>
+                    <div className={st.item}>Description</div>
+                    <div className={st.item}>Sum</div>
                 </div>
                 <div className={st.dayContainer}>
                     <div className={st.item}>Entyrr</div>
