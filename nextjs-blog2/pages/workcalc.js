@@ -1,5 +1,5 @@
-import CalcLayout from "../components/calcLayout";
-import CalcMain from "../components/CalcMain";
+import CalcLayout from "../components/CalcComponents/calcLayout";
+import CalcMain from "../components/CalcComponents/CalcMain";
 
 const HoursCalc = (props) => {
   return (
