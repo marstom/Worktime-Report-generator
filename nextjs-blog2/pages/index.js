@@ -27,6 +27,7 @@ export default function Home({allPostsData}) {
         Read{' '}
         <Link href="/posts/first-post"><a>This page</a></Link>
       </h1>
+      <h2>This is my new worktime calculator, check <Link href="/workcalc">This Calc!</Link></h2>
         <p>
           Hello, I am backend dev with 5 years experience, wanna be frontend dev now. I'm learning react.
           This is my first Next.js app, Next.js looks awesome!

@@ -21,22 +21,54 @@ const CalcMain = (props) => {
     <div>
       <h1 className={st.header}>Hours calc</h1>
 
-      <div className={st.container}>
-        <label>Date</label>
-        <input type="date"></input>
-        <label>Description</label>
-        <textarea></textarea>
+      <div className={st.form_container}>
+        <div className={st.row}>
+          <div className={st.col_25}>
+            <label>ID: </label>
+          </div>
+          <div className={st.col_75}>
+            <input type="text"></input>
+          </div>
+        </div>
 
-        <label>Time</label>
-        <input type="text" id={st.time}></input>
-        <input type="text" id={st.time}></input>
+        <div className={st.row}>
+          <div className={st.col_25}>
+            <label>Date</label>
+          </div>
+          <div className={st.col_75}>
+            <input type="date"></input>
+          </div>
+        </div>
 
-        <input type="button" value="Add"></input>
+        <div className={st.row}>
+          <div className={st.col_25}>
+            <label>Description: </label>
+          </div>
+          <div className={st.col_75}>
+            <textarea></textarea>
+          </div>
+        </div>
+        <div className={st.row}>
+          <div className={st.col_25}>
+            <label>Time: </label>
+          </div>
+          <div className={st.col_75}>
+            <input type="text" id={st.time}></input>
+            <input type="text" id={st.time}></input>
+          </div>
+        </div>
+
+        <div className={st.row}>
+          <div className={st.col_25}>
+            <input type="button" value="Add / Modify"></input>
+          </div>
+        </div>
       </div>
       <h3>day</h3>
       <table className={st.table}>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Date</th>
             <th>Description</th>
             <th>Time</th>
@@ -48,6 +80,7 @@ const CalcMain = (props) => {
             resp.currnetMonth.map((day) => {
               return day.entrys.map((entry) => (
                 <tr key={`${day.id} ${entry.id}`} className={st.row}>
+                  <td className={st.info}>{entry.id}</td>
                   <td>{entry.id === 1 ? day.date : ""}</td>
                   <td>{entry.description}</td>
                   <td>{entry.time}</td>
@@ -56,6 +89,7 @@ const CalcMain = (props) => {
               ));
             })}
         </tbody>
+        <button className={st.primary}>Printable version</button>
       </table>
 
       <h3 className={st.item}>month</h3>

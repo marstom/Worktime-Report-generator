@@ -1,3 +1,8 @@
+export const addWorktimeEntry = (date) => {
+  console.log(date)
+
+}
+
 export const getWorktimes = () => {
   return {
     currnetMonth: [

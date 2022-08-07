@@ -1,14 +1,39 @@
-.header{
+.header {
   color: orange;
   text-align: center;
 }
 
-.container {
+.form_container {
   color: brown;
+  width: 50%;
 
+  // centered conteiner
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 5px;
+  background-color: #ffedc7;
+  padding: 20px;
   #time {
-    width: 2.1em;
+    width: 3.1em;
     color: blue;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type="button"] {
+    background-color: rgb(255, 245, 211);
+    border-radius: 5px;
+    padding: 8px;
   }
 }
 
@@ -34,6 +59,31 @@
     background-color: lightblue;
   }
   td:active {
-    background-color:rgb(255, 225, 156);
+    background-color: rgb(255, 225, 156);
   }
+}
+
+.col_25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col_75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.primary {
+  background-color: rgb(255, 245, 211);
+  border-radius: 5px;
+  padding: 8px;
 }
