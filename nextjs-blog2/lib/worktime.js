@@ -3,8 +3,9 @@ export const addWorktimeEntry = (date) => {
 
 }
 
-export const splitDate = () => {
-  return 'asdf'
+export const splitDateToNumbers = (date) => {
+  const [year, month, day] = date.split('-').map(v => Number(v))
+  return {year, month, day}
 }
 
 export const getWorktimes = () => {
