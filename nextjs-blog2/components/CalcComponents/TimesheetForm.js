@@ -3,7 +3,22 @@ import st from "./CalcMain.module.scss";
 import { useEffect, useState } from "react";
 
 const TimesheetForm = (props) => {
-  const addModifyClick = () => {};
+  const [id, setId] = useState();
+  const [date, setDate] = useState();
+  const [descripton, setDescription] = useState();
+  const [timeHh, setTimeHh] = useState();
+  const [timeMm, setTimeMm] = useState();
+
+  useEffect(() => {});
+
+  const addModifyClick = () => {
+    console.log("Het!");
+    console.log(id);
+    console.log(date);
+    console.log(descripton);
+    console.log(timeHh);
+    console.log(timeMm);
+  };
 
   return (
     <div>
@@ -15,7 +30,7 @@ const TimesheetForm = (props) => {
             <label>ID: </label>
           </div>
           <div className={st.col_75}>
-            <input type="text"></input>
+            <input onChange={(e) => setId(e.target.value)} type="text"></input>
           </div>
         </div>
 
@@ -24,7 +39,10 @@ const TimesheetForm = (props) => {
             <label>Date</label>
           </div>
           <div className={st.col_75}>
-            <input type="date"></input>
+            <input
+              onChange={(e) => setDate(e.target.value)}
+              type="date"
+            ></input>
           </div>
         </div>
 
@@ -33,7 +51,9 @@ const TimesheetForm = (props) => {
             <label>Description: </label>
           </div>
           <div className={st.col_75}>
-            <textarea></textarea>
+            <textarea
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
           </div>
         </div>
         <div className={st.row}>
@@ -41,8 +61,16 @@ const TimesheetForm = (props) => {
             <label>Time: </label>
           </div>
           <div className={st.col_75}>
-            <input type="text" id={st.time}></input>
-            <input type="text" id={st.time}></input>
+            <input
+              onChange={(e) => setTimeHh(e.target.value)}
+              type="text"
+              id={st.time}
+            ></input>
+            <input
+              onChange={(e) => setTimeMm(e.target.value)}
+              type="text"
+              id={st.time}
+            ></input>
           </div>
         </div>
 

@@ -3,6 +3,10 @@ export const addWorktimeEntry = (date) => {
 
 }
 
+export const splitDate = () => {
+  return 'asdf'
+}
+
 export const getWorktimes = () => {
   return {
     currnetMonth: [
