@@ -1,4 +1,4 @@
-import { createConn } from "../database";
+import { createConn, JSONDatabase } from "../database";
 
 
 
@@ -26,6 +26,29 @@ describe("db tests", () => {
         const data3 = await db.getData("/to/jest/dluga")
         console.log(data3)
         expect(data3).toEqual({ sciezka: 'Hej' })
+    })
+
+    it("creates db and lookin using abstraction", async () => {
+        const database = new JSONDatabase('/tmp/testdb_class')
+        await database.saveData("/day/monday", "1:20")
+        let data = await database.getData("/day")
+        expect(data).toEqual({monday: "1:20"})
+
+        data = await database.getData("/")
+        expect(data).toEqual({day: {monday: "1:20"}})
+
+
+        await database.delete('/day/monday')
+        data = await database.getData("/")
+
+        expect(data).toEqual({day: {}})
+        
+        await database.delete('/day')
+        data = await database.getData("/")
+
+        expect(data).toEqual({})
+
+        
     })
 })
 
