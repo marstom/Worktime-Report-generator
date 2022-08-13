@@ -50,5 +50,16 @@ describe("db tests", () => {
         
         
     })
+
+
+    it("prepares timetable db", async () => { 
+        const database = new JSONDatabase('/tmp/worktime_sketch')
+
+        const currentMonth = "/years/2022/08"
+        await database.saveData(currentMonth + "/id", 1)
+        await database.saveData(currentMonth + "/day", "Sat")
+        await database.saveData(currentMonth + "/entrys", [])
+
+    })
 })
 
