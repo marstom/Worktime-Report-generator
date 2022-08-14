@@ -51,15 +51,90 @@ describe("db tests", () => {
         
     })
 
+    it("does manipulation on the list", async () => {
+        const database = new JSONDatabase('/tmp/workcalc/testdb_class')
+        await database.saveData("/listKey", [1,2,3,4,5])
+        await database.saveData("/listKey[]", "dodane")
+        await database.saveData("/listKey[]", "nowe")
+        await database.saveData("/listKey[]", "itemy")
+        expect(await database.getData("/listKey[1]")).toEqual(2)
+
+    })
+
 
     it("prepares timetable db", async () => { 
-        const database = new JSONDatabase('/tmp/worktime_sketch')
+        const database = new JSONDatabase('/tmp/workcalc/worktime_sketch')
 
-        const currentMonth = "/years/2022/08"
-        await database.saveData(currentMonth + "/id", 1)
-        await database.saveData(currentMonth + "/day", "Sat")
-        await database.saveData(currentMonth + "/entrys", [])
+        let currentMonth;
+        let currentDay;
+        currentMonth = "/years/2022/01"
+        currentDay = currentMonth + "/01"
+        await database.saveData(currentDay + "/day", "Sun")
+        await database.saveData(currentDay + "/entrys/1", {description:"MY2 - doing calc", time:"0:20"})
+        await database.saveData(currentDay + "/entrys/2", {description:"MY2 - doing calc", time:"0:30"})
 
+        currentMonth = "/years/2022/08"
+        currentDay = currentMonth + "/14"
+        await database.saveData(currentDay + "/day", "Sun")
+        await database.saveData(currentDay + "/entrys/1", {description:"MY1 - workon calcualtor", time:"1:30"})
+        await database.saveData(currentDay + "/entrys/2", {description:"MY2 - doing calc", time:"1:15"})
+        await database.saveData(currentDay + "/entrys/3", {description:"MY3 - music", time:"1:15"})
+        currentDay = currentMonth + "/15"
+        await database.saveData(currentDay + "/day", "Mon")
+        await database.saveData(currentDay + "/entrys/1", {description:"dzień z Adasiem", time:"8:00"})
+
+        const data = await database.getData("/")
+        expect(data).toEqual(
+            {
+                "years": {
+                    "2022": {
+                        "01": {
+                            "01": {
+                                "day": "Sun",
+                                "entrys": {
+                                    "1": {
+                                        "description": "MY2 - doing calc",
+                                        "time": "0:20"
+                                    },
+                                    "2": {
+                                        "description": "MY2 - doing calc",
+                                        "time": "0:30"
+                                    }
+                                }
+                            }
+                        },
+                        "08": {
+                            "14": {
+                                "day": "Sun",
+                                "entrys": {
+                                    "1": {
+                                        "description": "MY1 - workon calcualtor",
+                                        "time": "1:30"
+                                    },
+                                    "2": {
+                                        "description": "MY2 - doing calc",
+                                        "time": "1:15"
+                                    },
+                                    "3": {
+                                        "description": "MY3 - music",
+                                        "time": "1:15"
+                                    }
+                                }
+                            },
+                            "15": {
+                                "day": "Mon",
+                                "entrys": {
+                                    "1": {
+                                        "description": "dzień z Adasiem",
+                                        "time": "8:00"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        )
     })
 })
 

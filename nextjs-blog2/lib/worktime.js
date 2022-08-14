@@ -1,3 +1,7 @@
+import { JSONDatabase } from "./database"
+
+const db = new JSONDatabase('./lib/db/timeEntrysDb.json')
+
 export const addWorktimeEntry = (date) => {
   console.log(date)
 
@@ -65,3 +69,19 @@ export const getWorktimes = () => {
     total: 5,
   };
 };
+
+
+export const getTimeEntryForDay = async () => {
+  const data = await db.getData('/years/2022/08/14')
+  return JSON.stringify(data)
+}
+
+export const getTimeEntrysForDate = async (stringDate) => {
+  // 2022/08/14 ie
+  const data = await db.getData(`/years/${stringDate}`)
+  return data
+}
+
+export const hello = () => {
+  return 'hello';
+}

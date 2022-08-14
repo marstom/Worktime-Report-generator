@@ -15,11 +15,15 @@ export const createConn = (name) => {
 // Abstraction
 export class JSONDatabase {
     constructor(dbName){
-        this.db = new JsonDB(new Config(dbName, true, false, '/'));
+        this.db = new JsonDB(new Config(dbName, true, true, '/'));
     }
     
     async saveData(path, data){
         await this.db.push(path, data)
+    }
+
+    async updateData(path, data){
+        await this.db.push(path, data, false)
     }
     
     async getData(path){

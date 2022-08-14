@@ -11,6 +11,8 @@ const CalcMain = (props) => {
     <div>
       <TimesheetForm></TimesheetForm>
       <TimesTable></TimesTable>
+
+    <div>{props.timeEntryExample}</div>
     </div>
   );
 };
