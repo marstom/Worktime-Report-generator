@@ -5,6 +5,19 @@ import TimesTable from "./TimesTable";
 import TimesheetForm from "./TimesheetForm";
 
 const CalcMain = (props) => {
+
+  const [tableData, setTableData] = useState();
+
+  useEffect(() => {
+    const loadData = async () => {
+      console.log("fethcing months ....")
+      const response = await fetch("/api/worktimesheet/monthly/2022/08")
+      const data = await response.json()
+      setTableData(data)
+    }
+    loadData()
+  }, [])
+
   const addModifyClick = () => {};
 
   return (
@@ -13,6 +26,8 @@ const CalcMain = (props) => {
       <TimesTable></TimesTable>
 
     <div>{props.timeEntryExample}</div>
+    <hr/>
+    <div>{JSON.stringify(tableData)}</div>
     </div>
   );
 };

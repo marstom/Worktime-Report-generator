@@ -4,7 +4,7 @@ const db = new JSONDatabase('./lib/db/timeEntrysDb.json')
 
 export const addWorktimeEntry = (date) => {
   console.log(date)
-
+  
 }
 
 export const splitDateToNumbers = (date) => {
@@ -40,7 +40,7 @@ export const getWorktimes = () => {
             date: "",
             day: "",
             description:
-              "tom-222 this is some longer descriptn - asdf asef aaa.",
+            "tom-222 this is some longer descriptn - asdf asef aaa.",
             time: "1:40",
           },
         ],
@@ -76,12 +76,42 @@ export const getTimeEntryForDay = async () => {
   return JSON.stringify(data)
 }
 
+// TODO adjust to contract when it's day
 export const getTimeEntrysForDate = async (stringDate) => {
   // 2022/08/14 ie
   const data = await db.getData(`/years/${stringDate}`)
   return data
 }
 
-export const hello = () => {
-  return 'hello';
-}
+export const convertToApiContract = (perDayEntrys, month, year) => {
+  const res = {
+    currentMonth: []
+  }
+  
+  Object.entries(perDayEntrys).forEach(([k, v], index) => {
+    // Object.entries(v).forEach(([entryKey, entryValue], index) => {
+    // })
+    res.currentMonth.push(
+      {
+        id: index,
+        date: `${k}.${month}.${year}`,
+        day: new Intl.DateTimeFormat("en-US", {weekday: 'long'}).format(new Date(`${year}-${month}-${k}`)),
+        entrys: [
+          {
+            description: v["entrys"]["1"]["description"],
+            time: v["entrys"]["1"]["time"]
+          }
+        ]
+        
+      }
+      )
+      
+    });
+    
+    return res
+    
+  }
+  
+  export const hello = () => {
+    return 'hello';
+  }
