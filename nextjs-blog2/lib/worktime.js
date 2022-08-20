@@ -12,6 +12,30 @@ export const splitDateToNumbers = (date) => {
   return {year, month, day}
 }
 
+
+
+export const sumHoursAndMinutes = (timeArray) => {
+  let hours = 0;
+  let minutes = 0;
+  const f = (n) => {
+    return n > 9 ? "" + n: "0" + n;
+  }
+  
+  for(let i in timeArray){
+    const [hh, mm] = timeArray[i].split(":")
+    hours += parseInt(hh)
+    minutes += parseInt(mm)
+  }
+  
+  if(minutes > 59){
+    hours += parseInt(minutes / 60);
+    minutes = parseInt(minutes % 60);
+  }
+  return hours + ":" + f(minutes);
+  
+  
+}
+
 export const getWorktimes = () => {
   return {
     currnetMonth: [
@@ -88,24 +112,28 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
     currentMonth: []
   }
   
-  Object.entries(perDayEntrys).forEach(([k, v], index) => {
+  Object.entries(perDayEntrys).forEach(([day, v], index) => {
     // Object.entries(v).forEach(([entryKey, entryValue], index) => {
     // })
-    res.currentMonth.push(
-      {
-        id: index,
-        date: `${k}.${month}.${year}`,
-        day: new Intl.DateTimeFormat("en-US", {weekday: 'long'}).format(new Date(`${year}-${month}-${k}`)),
-        entrys: [
-          {
-            description: v["entrys"]["1"]["description"],
-            time: v["entrys"]["1"]["time"]
+    let totalAmountPerDay = "0:00"
+    let timesArray = []
+    let data= {
+        id: index+1,
+        date: `${day}.${month}.${year}`,
+        day: new Intl.DateTimeFormat("en-US", {weekday: 'long'}).format(new Date(`${year}-${month}-${day}`)),
+        total: totalAmountPerDay,
+        // TODO process entrys elegant way!
+        entrys: Object.entries(v.entrys).map(e => {
+          timesArray.push(e[1].time)
+          return {
+            id:e[0],
+            description: e[1].description,
+            time: e[1].time,
           }
-        ]
-        
+        })
       }
-      )
-      
+      data.total = sumHoursAndMinutes(timesArray)
+      res.currentMonth.push(data)
     });
     
     return res

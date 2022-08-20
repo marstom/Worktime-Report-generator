@@ -1,4 +1,33 @@
-import { convertToApiContract, splitDateToNumbers } from "../worktime";
+import { convertToApiContract, splitDateToNumbers, sumHoursAndMinutes } from "../worktime";
+
+
+describe("Sum to hour and minutes", () => {
+  it("sums hour and minutes, two items", () => {
+    let myArray = ["01:40","03:50"];
+    expect(sumHoursAndMinutes(myArray)).toEqual("5:30")
+  })
+
+  it("sums hour and minutes, two items, two zeros at the end", () => {
+    let myArray = ["01:00","01:00", "2:00", "4:00"];
+    expect(sumHoursAndMinutes(myArray)).toEqual("8:00")
+  })
+  it("empty array", () => {
+    let myArray = [];
+    expect(sumHoursAndMinutes(myArray)).toEqual("0:00")
+  })
+  it("zero item", () => {
+    let myArray = ["0:00"];
+    expect(sumHoursAndMinutes(myArray)).toEqual("0:00")
+  })
+  it("minutes", () => {
+    let myArray = ["0:01", "0:01", "0:02", "0:05"];
+    expect(sumHoursAndMinutes(myArray)).toEqual("0:09")
+  })
+  it("partial hours", () => {
+    let myArray = ["1:30", "1:15", "1:15"];
+    expect(sumHoursAndMinutes(myArray)).toEqual("4:00")
+  })
+})
 
 
 describe("Utils functions", () => {
@@ -7,6 +36,8 @@ describe("Utils functions", () => {
     expect(result).toEqual({ year: 2022, month: 8, day: 1 });
     
   })
+
+
   
   
   it("convert from raw datatabase data to api contract", () => {
@@ -42,13 +73,12 @@ describe("Utils functions", () => {
     const result = convertToApiContract(dat, "08", "2022")
     console.dir(result)
     
-    /*
     expect(result).toEqual({
       currentMonth: [
         {
           id: 1,
           date: "14.08.2022",
-          day: "Saturday",
+          day: "Sunday",
           total: "4:00",
           entrys: [
             {
@@ -71,7 +101,7 @@ describe("Utils functions", () => {
         {
           id: 2,
           date: "15.08.2022",
-          day: "Sunday",
+          day: "Monday",
           total: "8:00",
           entrys: [
             {
@@ -83,7 +113,6 @@ describe("Utils functions", () => {
         }
       ]
     })
-    */
     
   })
 })
