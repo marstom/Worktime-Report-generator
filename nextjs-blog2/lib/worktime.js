@@ -107,14 +107,21 @@ export const getTimeEntrysForDate = async (stringDate) => {
   return data
 }
 
+/*
+
+Per day entrys on api are here:
+
+http://localhost:3000/api/worktimesheet/monthly/2022/08
+*/
 export const convertToApiContract = (perDayEntrys, month, year) => {
+  const totalHoursArray = []
   const res = {
+    currentMonthTotalHours: "0:00",
+    currentMonthExpectedHours: "0:00",
     currentMonth: []
   }
   
   Object.entries(perDayEntrys).forEach(([day, v], index) => {
-    // Object.entries(v).forEach(([entryKey, entryValue], index) => {
-    // })
     let totalAmountPerDay = "0:00"
     let timesArray = []
     let data= {
@@ -122,7 +129,6 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
         date: `${day}.${month}.${year}`,
         day: new Intl.DateTimeFormat("en-US", {weekday: 'long'}).format(new Date(`${year}-${month}-${day}`)),
         total: totalAmountPerDay,
-        // TODO process entrys elegant way!
         entrys: Object.entries(v.entrys).map(e => {
           timesArray.push(e[1].time)
           return {
@@ -133,13 +139,13 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
         })
       }
       data.total = sumHoursAndMinutes(timesArray)
+      totalHoursArray.push(data.total)
       res.currentMonth.push(data)
     });
-    
+    res.currentMonthTotalHours = sumHoursAndMinutes(totalHoursArray)
     return res
-    
   }
-  
+
   export const hello = () => {
     return 'hello';
   }

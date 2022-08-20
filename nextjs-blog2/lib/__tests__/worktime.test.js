@@ -74,6 +74,8 @@ describe("Utils functions", () => {
     console.dir(result)
     
     expect(result).toEqual({
+      currentMonthTotalHours: "12:00",
+      currentMonthExpectedHours: "0:00",
       currentMonth: [
         {
           id: 1,
