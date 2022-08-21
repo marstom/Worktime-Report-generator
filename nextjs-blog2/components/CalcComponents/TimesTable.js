@@ -1,25 +1,12 @@
 import st from "./CalcMain.module.scss";
-import { useEffect, useState } from "react";
 import classnames from 'classnames'
 
 
 const TimesTable = (props) => {
-  const [resp, setResp] = useState();
 
-  useEffect(() => {
-    // console.log("on load");
-    // const resolve = async () => {
-    //   const res = await fetch("/api/worktimesheet/monthly/2022/08");
-    //   const json = await res.json();
-    //   setResp(json);
-    // };
-    // resolve();
-    // console.log(resp);
-    // console.log(props.fromApi);
-  }, []);
-
-  const isWeekend = () => {
-    return false
+  const isWeekend = (entry) => {
+    console.log(entry.day)
+    return ["Saturday", "Sunday"].includes(entry.day)
   }
 
   return (
@@ -42,7 +29,7 @@ const TimesTable = (props) => {
                 <tr key={`${day.id} ${entry.id}`} 
                   className={classnames({
                     [st.row]: true,
-                    [st.row_gray]: isWeekend()
+                    [st.row_gray]: isWeekend(day)
                   })}
                 >
                   <td className={st.info}>{entry.id}</td>
