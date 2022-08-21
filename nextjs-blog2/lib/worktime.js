@@ -1,6 +1,6 @@
 import { JSONDatabase } from "./database"
+import db from './prodDb'
 
-const db = new JSONDatabase('./lib/db/timeEntrysDb.json')
 
 export const addWorktimeEntry = (date) => {
   console.log(date)
