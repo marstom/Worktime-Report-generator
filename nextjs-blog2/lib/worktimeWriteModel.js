@@ -1,9 +1,15 @@
 // aggregate candidat
-export const writeEntryToDay = async (database, id, date, descripton, time) => {
+export const writeEntryToDay = async (
+  database,
+  id,
+  date,
+  description,
+  time,
+) => {
   const [year, month, day] = date.split("-");
-  const saveToDayPath = `${year}/${year}/${month}/${day}`;
+  const saveToDayPath = `/years/${year}/${month}/${day}`;
   const entryPath = `/entrys/${id}`;
-  await database.saveData(saveToDayPath + entryPath, { descripton, time });
+  await database.saveData(saveToDayPath + entryPath, { description, time });
 };
 
 export default writeEntryToDay;

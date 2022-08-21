@@ -4,7 +4,11 @@ import prodDb from "./prodDb";
 
 export class SaveWorktimeEntryService {
   constructor(database) {
-    this.database = database | prodDb;
+    if (database) {
+      this.database = database;
+    } else {
+      this.database = prodDb;
+    }
   }
 
   // constructor(){
@@ -12,17 +16,17 @@ export class SaveWorktimeEntryService {
   // }
 
   saveWorktimeEntry(worktimeEntryRequestData) {
-    validateWorktimeEntry(worktimeEntryRequestData);
+    this.validateWorktimeEntry(worktimeEntryRequestData);
     writeEntryToDay(
       this.database,
       worktimeEntryRequestData.id,
       worktimeEntryRequestData.date,
-      worktimeEntryRequestData.description,
+      worktimeEntryRequestData.descripton,
       worktimeEntryRequestData.time,
     );
   }
 
-  worktimeEntryRequestData(worktimeEntryRequestData) {
+  validateWorktimeEntry(worktimeEntryRequestData) {
     // TODO
   }
 }
