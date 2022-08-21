@@ -1,13 +1,11 @@
 import st from "./CalcMain.module.scss";
-import classnames from 'classnames'
-
+import classnames from "classnames";
 
 const TimesTable = (props) => {
-
   const isWeekend = (entry) => {
-    console.log(entry.day)
-    return ["Saturday", "Sunday"].includes(entry.day)
-  }
+    console.log(entry.day);
+    return ["Saturday", "Sunday"].includes(entry.day);
+  };
 
   return (
     <>
@@ -26,10 +24,11 @@ const TimesTable = (props) => {
           {props.tableData &&
             props.tableData.currentMonth.map((day) => {
               return day.entrys.map((entry) => (
-                <tr key={`${day.id} ${entry.id}`} 
+                <tr
+                  key={`${day.id} ${entry.id}`}
                   className={classnames({
                     [st.row]: true,
-                    [st.row_gray]: isWeekend(day)
+                    [st.row_gray]: isWeekend(day),
                   })}
                 >
                   <td className={st.info}>{entry.id}</td>
@@ -46,9 +45,18 @@ const TimesTable = (props) => {
 
       <h3 className={st.item}>month</h3>
       <div>
-        <div>Expected at the end: {props.tableData && props.tableData.currentMonthExpectedHours}</div>
-        <div>Expected until now: {props.tableData && props.tableData.expectedUntilNow} </div>
-        <div>Current total: {props.tableData && props.tableData.currentMonthTotalHours} </div>
+        <div>
+          Expected at the end:{" "}
+          {props.tableData && props.tableData.currentMonthExpectedHours}
+        </div>
+        <div>
+          Expected until now:{" "}
+          {props.tableData && props.tableData.expectedUntilNow}{" "}
+        </div>
+        <div>
+          Current total:{" "}
+          {props.tableData && props.tableData.currentMonthTotalHours}{" "}
+        </div>
       </div>
     </>
   );

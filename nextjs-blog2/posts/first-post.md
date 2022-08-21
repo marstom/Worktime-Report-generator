@@ -9,8 +9,6 @@ Tak zaczęła się moja historia w Twisto
 - 1 lipca łagodne wdrożenie
 - miła praca
 
-
-
 Przykładowy program hello-world w C dla próby parser MD:
 
 ```c

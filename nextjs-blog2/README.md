@@ -18,11 +18,9 @@ http://localhost:3000/api/worktimesheet/monthly/2022
 http://localhost:3000/api/worktimesheet/monthly/2022/08
 http://localhost:3000/api/worktimesheet/monthly/2022/08/15
 
-
 Endpoint na zapisanie czasu pracy:
 
 http://localhost:3000/api/save_worktime_entry
-
 
 ## TODO
 

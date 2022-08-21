@@ -16,9 +16,9 @@ const TimesheetForm = (props) => {
       id,
       date,
       descripton,
-      time: `${timeHh}:${timeMm}`
-    }
-    console.log(apiRequest)
+      time: `${timeHh}:${timeMm}`,
+    };
+    console.log(apiRequest);
   };
 
   return (
