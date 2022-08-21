@@ -12,12 +12,13 @@ const TimesheetForm = (props) => {
   useEffect(() => {});
 
   const addModifyClick = () => {
-    console.log("Het!");
-    console.log(id);
-    console.log(date);
-    console.log(descripton);
-    console.log(timeHh);
-    console.log(timeMm);
+    const apiRequest = {
+      id,
+      date,
+      descripton,
+      time: `${timeHh}:${timeMm}`
+    }
+    console.log(apiRequest)
   };
 
   return (

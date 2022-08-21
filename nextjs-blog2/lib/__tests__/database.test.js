@@ -1,5 +1,6 @@
 import { createConn, JSONDatabase } from "../database";
 
+// TODO filepaths should be random, real temporary files
 
 
 describe("db tests", () => {
@@ -63,7 +64,7 @@ describe("db tests", () => {
 
 
     it("prepares timetable db", async () => { 
-        const database = new JSONDatabase('/tmp/workcalc/worktime_sketch')
+        const database = new JSONDatabase('/tmp/workcalc/worktime_sketch2')
 
         let currentMonth;
         let currentDay;
