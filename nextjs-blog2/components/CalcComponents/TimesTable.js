@@ -1,5 +1,7 @@
 import st from "./CalcMain.module.scss";
 import { useEffect, useState } from "react";
+import classnames from 'classnames'
+
 
 const TimesTable = (props) => {
   const [resp, setResp] = useState();
@@ -7,7 +9,7 @@ const TimesTable = (props) => {
   useEffect(() => {
     console.log("on load");
     const resolve = async () => {
-      const res = await fetch("/api/worktimes_list");
+      const res = await fetch("/api/worktimesheet/monthly/2022/08");
       const json = await res.json();
       setResp(json);
     };
@@ -15,6 +17,10 @@ const TimesTable = (props) => {
     console.log(resp);
     console.log(props.fromApi);
   }, []);
+
+  const isWeekend = () => {
+    return false
+  }
 
   return (
     <>
@@ -31,14 +37,19 @@ const TimesTable = (props) => {
         </thead>
         <tbody>
           {resp &&
-            resp.currnetMonth.map((day) => {
+            resp.currentMonth.map((day) => {
               return day.entrys.map((entry) => (
-                <tr key={`${day.id} ${entry.id}`} className={st.row}>
+                <tr key={`${day.id} ${entry.id}`} 
+                  className={classnames({
+                    [st.row]: true,
+                    [st.row_gray]: isWeekend()
+                  })}
+                >
                   <td className={st.info}>{entry.id}</td>
-                  <td>{entry.id === 1 ? day.date : ""}</td>
+                  <td>{entry.id === "1" ? day.date : ""}</td>
                   <td>{entry.description}</td>
                   <td>{entry.time}</td>
-                  <td>{entry.id === 1 ? day.total : ""}</td>
+                  <td>{entry.id === "1" ? day.total : ""}</td>
                 </tr>
               ));
             })}
