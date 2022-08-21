@@ -22,12 +22,8 @@ const CalcMain = (props) => {
 
   return (
     <div>
-      <TimesheetForm></TimesheetForm>
-      <TimesTable></TimesTable>
-
-    <div>{props.timeEntryExample}</div>
-    <hr/>
-    <div>{JSON.stringify(tableData)}</div>
+      <TimesheetForm ></TimesheetForm>
+      <TimesTable tableData={tableData}></TimesTable>
     </div>
   );
 };

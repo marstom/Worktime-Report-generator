@@ -7,15 +7,15 @@ const TimesTable = (props) => {
   const [resp, setResp] = useState();
 
   useEffect(() => {
-    console.log("on load");
-    const resolve = async () => {
-      const res = await fetch("/api/worktimesheet/monthly/2022/08");
-      const json = await res.json();
-      setResp(json);
-    };
-    resolve();
-    console.log(resp);
-    console.log(props.fromApi);
+    // console.log("on load");
+    // const resolve = async () => {
+    //   const res = await fetch("/api/worktimesheet/monthly/2022/08");
+    //   const json = await res.json();
+    //   setResp(json);
+    // };
+    // resolve();
+    // console.log(resp);
+    // console.log(props.fromApi);
   }, []);
 
   const isWeekend = () => {
@@ -36,8 +36,8 @@ const TimesTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {resp &&
-            resp.currentMonth.map((day) => {
+          {props.tableData &&
+            props.tableData.currentMonth.map((day) => {
               return day.entrys.map((entry) => (
                 <tr key={`${day.id} ${entry.id}`} 
                   className={classnames({
@@ -59,9 +59,9 @@ const TimesTable = (props) => {
 
       <h3 className={st.item}>month</h3>
       <div>
-        <div>Expected at the end: {resp && resp.expected}</div>
-        <div>Expected until now: {resp && resp.expectedUntilNow} </div>
-        <div>Current total: {resp && resp.total} </div>
+        <div>Expected at the end: {props.tableData && props.tableData.currentMonthExpectedHours}</div>
+        <div>Expected until now: {props.tableData && props.tableData.expectedUntilNow} </div>
+        <div>Current total: {props.tableData && props.tableData.currentMonthTotalHours} </div>
       </div>
     </>
   );

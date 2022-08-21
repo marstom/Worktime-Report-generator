@@ -13,12 +13,8 @@ const HoursCalc = (props) => {
 
 export async function getStaticProps({ params }) {
   const data = await getTimeEntryForDay();
-  console.log("on load");
-  const res = await fetch("http://localhost:3000/api/worktimes_list");
-  const json = await res.json();
-  console.log(res);
   return {
-    props: { fromApi: json, timeEntryExample: data },
+    props: { fromApi: {'testData': 'test'}, timeEntryExample: data },
   };
 }
 
