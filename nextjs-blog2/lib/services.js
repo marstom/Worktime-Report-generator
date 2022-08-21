@@ -18,7 +18,7 @@ export class SaveWorktimeEntryService {
       worktimeEntryRequestData.id,
       worktimeEntryRequestData.date,
       worktimeEntryRequestData.description,
-      worktimeEntryRequestData.time
+      worktimeEntryRequestData.time,
     );
   }
 
