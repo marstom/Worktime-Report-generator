@@ -33,3 +33,7 @@ http://localhost:3000/api/save_worktime_entry
 - [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 - [ ] Testy end to end w Cypress!
 - [ ] Finalnie deploy projektu na mój serwer na OVH!
+
+## SP 03
+
+- [ ] Sortowanie entry wg dnia w bazie danych lub na frontendzie
