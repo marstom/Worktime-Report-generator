@@ -3,7 +3,6 @@ import classnames from "classnames";
 
 const TimesTable = (props) => {
   const isWeekend = (entry) => {
-    console.log(entry.day);
     return ["Saturday", "Sunday"].includes(entry.day);
   };
 

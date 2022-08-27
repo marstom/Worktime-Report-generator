@@ -1,4 +1,4 @@
-import writeEntryToDay from "./worktimeWriteModel";
+import { writeEntryToDay, deleteEntry } from "./worktimeWriteModel";
 
 import prodDb from "./prodDb";
 
@@ -15,9 +15,9 @@ export class SaveWorktimeEntryService {
   // this.database = prodDb;
   // }
 
-  saveWorktimeEntry(worktimeEntryRequestData) {
+  async saveWorktimeEntry(worktimeEntryRequestData) {
     this.validateWorktimeEntry(worktimeEntryRequestData);
-    writeEntryToDay(
+    await writeEntryToDay(
       this.database,
       worktimeEntryRequestData.id,
       worktimeEntryRequestData.date,
@@ -26,7 +26,11 @@ export class SaveWorktimeEntryService {
     );
   }
 
-  validateWorktimeEntry(worktimeEntryRequestData) {
-    // TODO
+  async deleteWorktimeEntity(entryData) {
+    console.log("----entity data-------------------------");
+    console.log(entryData);
+    await deleteEntry(this.database, entryData.date, entryData.id);
   }
+
+  validateWorktimeEntry(entryData) {}
 }

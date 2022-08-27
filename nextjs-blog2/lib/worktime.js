@@ -1,9 +1,7 @@
 import { JSONDatabase } from "./database";
 import db from "./prodDb";
 
-export const addWorktimeEntry = (date) => {
-  console.log(date);
-};
+export const addWorktimeEntry = (date) => {};
 
 export const splitDateToNumbers = (date) => {
   const [year, month, day] = date.split("-").map((v) => Number(v));
@@ -59,7 +57,7 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
       id: index + 1,
       date: `${day}.${month}.${year}`,
       day: new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
-        new Date(`${year}-${month}-${day}`)
+        new Date(`${year}-${month}-${day}`),
       ),
       total: totalAmountPerDay,
       entrys: Object.entries(v.entrys).map((e) => {

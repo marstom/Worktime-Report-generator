@@ -24,6 +24,8 @@ http://localhost:3000/api/save_worktime_entry
 
 ## TODO
 
+- [ ] Autoinkrementacja id
+- [ ] Kasowanie wpisu z tabeli
 - [ ] Mogę zapisać do bazy czas pracy.
 - [ ] Sekcja config w DB z oczekiwanym czasem pracy w mc
 - [ ] Wyliczenie `expected until now`
@@ -37,3 +39,9 @@ http://localhost:3000/api/save_worktime_entry
 ## SP 03
 
 - [ ] Sortowanie entry wg dnia w bazie danych lub na frontendzie
+
+BUGI:
+
+- [ ] table from allows doing this: 1:2
+- [ ] mixed not sorted table / db content, find solution
+- [ ] can send undefined time!

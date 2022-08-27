@@ -12,4 +12,9 @@ export const writeEntryToDay = async (
   await database.saveData(saveToDayPath + entryPath, { description, time });
 };
 
-export default writeEntryToDay;
+export const deleteEntry = async (database, date, id) => {
+  const [year, month, day] = date.split("-");
+  const dayPath = `/years/${year}/${month}/${day}`;
+  const entryPath = `${dayPath}/entrys/${id}`;
+  await database.delete(entryPath);
+};

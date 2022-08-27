@@ -7,6 +7,8 @@ import TimesheetForm from "./TimesheetForm";
 const CalcMain = (props) => {
   const [tableData, setTableData] = useState();
 
+  const [tableResponse, setTableResponse] = useState();
+
   useEffect(() => {
     const loadData = async () => {
       console.log("fethcing months ....");
@@ -15,7 +17,7 @@ const CalcMain = (props) => {
       setTableData(data);
     };
     loadData();
-  }, []);
+  }, [tableResponse]);
 
   const addModifyClick = () => {};
 
@@ -23,7 +25,10 @@ const CalcMain = (props) => {
   // when I post data using TimesheetForm, I refresh TimesTable!
   return (
     <div>
-      <TimesheetForm></TimesheetForm>
+      <TimesheetForm
+        setTableResponse={setTableResponse}
+        tableResponse={tableResponse}
+      ></TimesheetForm>
       <TimesTable tableData={tableData}></TimesTable>
     </div>
   );

@@ -2,6 +2,7 @@ import st from "./CalcMain.module.scss";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ST } from "next/dist/shared/lib/utils";
 
 const TimesheetForm = (props) => {
   const [id, setId] = useState();
@@ -9,11 +10,9 @@ const TimesheetForm = (props) => {
   const [descripton, setDescription] = useState();
   const [timeHh, setTimeHh] = useState();
   const [timeMm, setTimeMm] = useState();
-  const [response, setResponse] = useState();
+  // const [response, setResponse] = useState();
 
-  useEffect(() => {
-    console.log("Posted data from form!!");
-  }, [response]);
+  useEffect(() => {}, [props.tableResponse]);
 
   const addModifyClick = async () => {
     const apiRequest = {
@@ -22,12 +21,24 @@ const TimesheetForm = (props) => {
       descripton,
       time: `${timeHh}:${timeMm}`,
     };
-    console.log(apiRequest);
     // fetch("api/save_worktime_entry", POST)
     const response = await axios.post("api/save_worktime_entry", apiRequest);
+    props.setTableResponse(response.data);
+  };
+
+  const deleteClick = async () => {
+    console.log("-------dedeltion==========");
+    const apiRequest = {
+      id,
+      date,
+    };
+    const response = await axios.delete(
+      "api/delete_worktime_entry",
+      apiRequest,
+    );
     console.log(response.data);
     console.log(response.status);
-    setResponse(response.data);
+    props.setTableResponse(response.data);
   };
 
   return (
@@ -90,6 +101,12 @@ const TimesheetForm = (props) => {
               onClick={addModifyClick}
               type="button"
               value="Add / Modify"
+            ></input>
+            <input
+              onClick={deleteClick}
+              type="button"
+              className={st.delete}
+              value="Delete"
             ></input>
           </div>
         </div>
