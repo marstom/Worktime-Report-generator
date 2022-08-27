@@ -1,6 +1,7 @@
 import st from "./CalcMain.module.scss";
 
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const TimesheetForm = (props) => {
   const [id, setId] = useState();
@@ -8,10 +9,13 @@ const TimesheetForm = (props) => {
   const [descripton, setDescription] = useState();
   const [timeHh, setTimeHh] = useState();
   const [timeMm, setTimeMm] = useState();
+  const [response, setResponse] = useState();
 
-  useEffect(() => {});
+  useEffect(() => {
+    console.log("Posted data from form!!");
+  }, [response]);
 
-  const addModifyClick = () => {
+  const addModifyClick = async () => {
     const apiRequest = {
       id,
       date,
@@ -19,6 +23,11 @@ const TimesheetForm = (props) => {
       time: `${timeHh}:${timeMm}`,
     };
     console.log(apiRequest);
+    // fetch("api/save_worktime_entry", POST)
+    const response = await axios.post("api/save_worktime_entry", apiRequest);
+    console.log(response.data);
+    console.log(response.status);
+    setResponse(response.data);
   };
 
   return (
