@@ -6,12 +6,12 @@ import TimesheetForm from "./TimesheetForm";
 
 const CalcMain = (props) => {
   const [tableData, setTableData] = useState();
-
-  const [tableResponse, setTableResponse] = useState();
+  const [tableResponse, setTableResponse] = useState(); // TODO invistigate if any better communication between components solution exists - state management?
 
   useEffect(() => {
     const loadData = async () => {
       console.log("fethcing months ....");
+      //TODO pass year/month from settings, not hardcode
       const response = await fetch("/api/worktimesheet/monthly/2022/08");
       const data = await response.json();
       setTableData(data);
@@ -19,10 +19,6 @@ const CalcMain = (props) => {
     loadData();
   }, [tableResponse]);
 
-  const addModifyClick = () => {};
-
-  // TODO
-  // when I post data using TimesheetForm, I refresh TimesTable!
   return (
     <div>
       <TimesheetForm

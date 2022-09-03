@@ -2,7 +2,6 @@ import st from "./CalcMain.module.scss";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ST } from "next/dist/shared/lib/utils";
 
 const TimesheetForm = (props) => {
   const [id, setId] = useState();
@@ -10,7 +9,6 @@ const TimesheetForm = (props) => {
   const [descripton, setDescription] = useState();
   const [timeHh, setTimeHh] = useState();
   const [timeMm, setTimeMm] = useState();
-  // const [response, setResponse] = useState();
 
   useEffect(() => {}, [props.tableResponse]);
 
@@ -21,23 +19,18 @@ const TimesheetForm = (props) => {
       descripton,
       time: `${timeHh}:${timeMm}`,
     };
-    // fetch("api/save_worktime_entry", POST)
     const response = await axios.post("api/save_worktime_entry", apiRequest);
     props.setTableResponse(response.data);
   };
 
   const deleteClick = async () => {
-    console.log("-------dedeltion==========");
     const apiRequest = {
       id,
       date,
     };
-    const response = await axios.delete(
-      "api/delete_worktime_entry",
-      apiRequest,
-    );
-    console.log(response.data);
-    console.log(response.status);
+    const response = await axios.delete("api/delete_worktime_entry", {
+      data: { ...apiRequest },
+    });
     props.setTableResponse(response.data);
   };
 
