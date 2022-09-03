@@ -38,6 +38,8 @@ export const getTimeEntrysForDate = async (stringDate) => {
   return data;
 };
 
+const zeroPad = (num, places) => String(num).padStart(places, "0");
+
 /*
 Per day entrys on api are here:
 http://localhost:3000/api/worktimesheet/monthly/2022/08
@@ -55,7 +57,7 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
     let timesArray = [];
     let data = {
       id: index + 1,
-      date: `${day}.${month}.${year}`,
+      date: `${zeroPad(day, 2)}.${month}.${year}`,
       day: new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
         new Date(`${year}-${month}-${day}`),
       ),

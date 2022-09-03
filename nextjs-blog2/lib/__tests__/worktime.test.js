@@ -117,6 +117,22 @@ describe("Utils functions", () => {
 
   it("convert from raw datatabase data to api contract Unsorted, not reversed 0x day", () => {
     const dat = {
+      4: {
+        entrys: {
+          1: {
+            description: "MY1 - workon calcualtor",
+            time: "1:30",
+          },
+          2: {
+            description: "MY2 - doing calc",
+            time: "1:15",
+          },
+          3: {
+            description: "MY3 - music",
+            time: "1:15",
+          },
+        },
+      },
       26: {
         entrys: {
           1: {
@@ -133,22 +149,6 @@ describe("Utils functions", () => {
           },
         },
       },
-      "04": {
-        entrys: {
-          1: {
-            description: "MY1 - workon calcualtor",
-            time: "1:30",
-          },
-          2: {
-            description: "MY2 - doing calc",
-            time: "1:15",
-          },
-          3: {
-            description: "MY3 - music",
-            time: "1:15",
-          },
-        },
-      },
     };
 
     const result = convertToApiContract(dat, "08", "2022");
@@ -160,32 +160,6 @@ describe("Utils functions", () => {
       currentMonth: [
         {
           id: 1,
-          date: "25.08.2022",
-          day: "Thursday",
-          total: "8:00",
-          entrys: [
-            {
-              id: "1",
-              description: "dzień z Adasiem",
-              time: "8:00",
-            },
-          ],
-        },
-        {
-          id: 2,
-          date: "26.08.2022",
-          day: "Friday",
-          total: "8:00",
-          entrys: [
-            {
-              id: "1",
-              description: "dzień z Adasiem",
-              time: "8:00",
-            },
-          ],
-        },
-        {
-          id: 3,
           date: "04.08.2022",
           day: "Thursday",
           total: "4:00",
@@ -204,6 +178,32 @@ describe("Utils functions", () => {
               id: "3",
               description: "MY3 - music",
               time: "1:15",
+            },
+          ],
+        },
+        {
+          id: 2,
+          date: "25.08.2022",
+          day: "Thursday",
+          total: "8:00",
+          entrys: [
+            {
+              id: "1",
+              description: "dzień z Adasiem",
+              time: "8:00",
+            },
+          ],
+        },
+        {
+          id: 3,
+          date: "26.08.2022",
+          day: "Friday",
+          total: "8:00",
+          entrys: [
+            {
+              id: "1",
+              description: "dzień z Adasiem",
+              time: "8:00",
             },
           ],
         },

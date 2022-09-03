@@ -25,20 +25,29 @@ http://localhost:3000/api/save_worktime_entry
 ## TODO
 
 - [ ] Autoinkrementacja id
-- [ ] Kasowanie wpisu z tabeli
-- [ ] Mogę zapisać do bazy czas pracy.
-- [ ] Sekcja config w DB z oczekiwanym czasem pracy w mc
 - [ ] Wyliczenie `expected until now`
 - [ ] Postman na to, kolekcja, do repo dać!
 - [ ] Test na serwis aplikacyjny !
 - [ ] Mogę pokazać tabelke w wersji do druku w ładnym stylu bez podwójnej ramki.
-- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 - [ ] Testy end to end w Cypress!
-- [ ] Finalnie deploy projektu na mój serwer na OVH!
+  - [ ] bazka testserver i prod
+- [ ] Sekcja "settings" w bazie danych zawierająca
+  - [ ] aktualny rok, aktualny miesiąc
+  - [ ] Sekcja config w DB z oczekiwanym czasem pracy w mc
+
+FUTURE:
+
+- [ ] Grafana do monitoringu :)
+- [ ] Kafka for fun, wysyłanie np maili wiadomości do mnie?
+- [ ] CI/CD ?
+- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
+  - [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 
 ## SP 03
 
 - [ ] Sortowanie entry wg dnia w bazie danych lub na frontendzie
+- [x] Mogę zapisać do bazy czas pracy.
+- [x] Kasowanie wpisu z tabeli
 
 BUGI:
 

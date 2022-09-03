@@ -1,45 +1,82 @@
 {
   "years": {
     "2022": {
-      "01": {
-        "01": {
-          "day": "Sun",
+      "08": {
+        "14": {
           "entrys": {
             "1": {
-              "description": "MY2 - doing calc",
-              "time": "0:20"
-            },
-            "2": {
-              "description": "MY2 - doing calc",
-              "time": "0:30"
+              "description": "asdf asdf ",
+              "time": "01:30"
+            }
+          }
+        },
+        "22": {
+          "entrys": {
+            "1": {
+              "description": "efasf",
+              "time": "01:30"
             }
           }
         }
       },
-      "08": {
-        "14": {
-          "day": "Sun",
+      "09": {
+        "3": {
           "entrys": {
             "1": {
-              "description": "MY1 - workon calcualtor",
-              "time": "1:30"
+              "description": "Tomek",
+              "time": "01:01"
             },
             "2": {
-              "description": "MY2 - doing calc",
-              "time": "1:15"
-            },
-            "3": {
-              "description": "MY3 - music",
-              "time": "1:15"
+              "description": "Drugi task",
+              "time": "01:01"
+            }
+          }
+        },
+        "4": {
+          "entrys": {
+            "1": {
+              "description": "Niedziela",
+              "time": "01:01"
+            }
+          }
+        },
+        "14": {
+          "entrys": {
+            "1": {
+              "description": "taksi",
+              "time": "01:01"
             }
           }
         },
         "15": {
-          "day": "Mon",
           "entrys": {
             "1": {
-              "description": "dzień z Adasiem",
-              "time": "8:00"
+              "description": "taksi",
+              "time": "01:01"
+            },
+            "2": {
+              "description": "taksi",
+              "time": "01:01"
+            },
+            "3": {
+              "description": "taksi",
+              "time": "01:01"
+            }
+          }
+        },
+        "29": {
+          "entrys": {
+            "1": {
+              "description": "Koneic miesiąca",
+              "time": "01:01"
+            },
+            "2": {
+              "description": "Koneic miesiąca",
+              "time": "01:01"
+            },
+            "3": {
+              "description": "Koneic miesiąca",
+              "time": "01:01"
             }
           }
         }

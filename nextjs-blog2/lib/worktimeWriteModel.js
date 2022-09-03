@@ -1,3 +1,5 @@
+const zeroPad = (num, places) => String(num).padStart(places, "0");
+
 // aggregate candidat
 export const writeEntryToDay = async (
   database,
@@ -7,8 +9,11 @@ export const writeEntryToDay = async (
   time,
 ) => {
   const [year, month, day] = date.split("-");
-  const saveToDayPath = `/years/${year}/${month}/${day}`;
+  const saveToDayPath = `/years/${year}/${month}/${parseInt(day)}`;
   const entryPath = `/entrys/${id}`;
+  const [hh, mm] = time.split(":");
+  time = `${zeroPad(hh, 2)}:${zeroPad(mm, 2)}`;
+
   await database.saveData(saveToDayPath + entryPath, { description, time });
 };
 
