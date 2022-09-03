@@ -1,26 +1,16 @@
 import st from "./CalcMain.module.scss";
 import classnames from "classnames";
-import Link from "next/link";
-import { useRouter } from "next/router";
 
-const TimesTable = (props) => {
+const PrintableTimesTable = (props) => {
   const isWeekend = (entry) => {
     return ["Saturday", "Sunday"].includes(entry.day);
-  };
-  const router = useRouter();
-
-  const goToPrintable = () => {
-    router.push("/workcalc/print");
   };
 
   return (
     <>
-      <h3>day</h3>
-
       <table className={st.table} cellSpacing="0" border={1}>
         <thead>
           <tr>
-            <th>ID</th>
             <th>Date</th>
             <th>Description</th>
             <th>Time</th>
@@ -38,7 +28,6 @@ const TimesTable = (props) => {
                     [st.row_gray]: isWeekend(day),
                   })}
                 >
-                  <td className={st.info}>{entry.id}</td>
                   <td>{entry.id === "1" ? day.date : ""}</td>
                   <td>{entry.description}</td>
                   <td>{entry.time}</td>
@@ -48,27 +37,17 @@ const TimesTable = (props) => {
             })}
         </tbody>
       </table>
-      <button onClick={goToPrintable} className={st.primary}>
-        Printable version
-      </button>
-
-      <h3 className={st.item}>month</h3>
       <div>
         <div>
-          Expected at the end:{" "}
-          {props.tableData && props.tableData.currentMonthExpectedHours}
-        </div>
-        <div>
-          Expected until now:{" "}
-          {props.tableData && props.tableData.expectedUntilNow}{" "}
-        </div>
-        <div>
-          Current total:{" "}
+          Całkowity czas:{" "}
           {props.tableData && props.tableData.currentMonthTotalHours}{" "}
         </div>
+        <div>Kwota brutto: 0.00000</div>
+        <div>Kwota netto: 0.00000</div>
+        <div>Dodatek za media + VAT: 172.00</div>
       </div>
     </>
   );
 };
 
-export default TimesTable;
+export default PrintableTimesTable;

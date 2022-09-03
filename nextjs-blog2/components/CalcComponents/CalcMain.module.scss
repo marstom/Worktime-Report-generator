@@ -45,14 +45,16 @@
 
 .table {
   table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 110%;
   }
 
   td,
   th {
-    border: 1px solid #4b4242;
+    font-family: monospace;
+    font-size: 16px;
+    border-collapse: collapse;
+    border: 0.5px solid #000000;
     text-align: left;
     padding: 8px;
   }

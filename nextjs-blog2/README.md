@@ -32,10 +32,13 @@ http://localhost:3000/api/save_worktime_entry
 - [ ] Testy end to end w Cypress!
   - [ ] bazka testserver i prod
 - [ ] Sekcja "settings" w bazie danych zawierająca
+
   - [ ] aktualny rok, aktualny miesiąc
   - [ ] Sekcja config w DB z oczekiwanym czasem pracy w mc
 
-FUTURE:
+- [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
+- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
+      FUTURE:
 
 - [ ] Grafana do monitoringu :)
 - [ ] Kafka for fun, wysyłanie np maili wiadomości do mnie?
@@ -45,12 +48,13 @@ FUTURE:
 
 ## SP 03
 
-- [ ] Sortowanie entry wg dnia w bazie danych lub na frontendzie
+- [x] Sortowanie entry wg dnia w bazie danych lub na frontendzie
 - [x] Mogę zapisać do bazy czas pracy.
 - [x] Kasowanie wpisu z tabeli
+- [x] table from allows doing this: 1:2
+- [x] mixed not sorted table / db content, find solution
+- [ ] wersja do druku
 
 BUGI:
 
-- [ ] table from allows doing this: 1:2
-- [ ] mixed not sorted table / db content, find solution
 - [ ] can send undefined time!
