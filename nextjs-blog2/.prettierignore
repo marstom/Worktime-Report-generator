@@ -4,3 +4,4 @@ coverage
 node_modules
 .next
 lib/db/timeEntrysDb.json
+README.md

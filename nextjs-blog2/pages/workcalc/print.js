@@ -8,7 +8,7 @@ const HoursCalc = (props) => {
   useEffect(() => {
     const loadData = async () => {
       console.log("fethcing months ....");
-      //TODO pass year/month from settings, not hardcode
+      //TODO pass year/month from settings, not hardcode, settings exisis, settings endpoint should give us this!
       const response = await fetch("/api/worktimesheet/monthly/2022/09");
       const data = await response.json();
       setTableData(data);

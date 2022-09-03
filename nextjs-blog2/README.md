@@ -1,4 +1,4 @@
-# Aplikacja do zapisu czasu pracy
+# Aplikacja do zapisu czasu pracy 👨🏼‍💻
 
 ## Tutorial
 
@@ -24,21 +24,25 @@ http://localhost:3000/api/save_worktime_entry
 
 ## TODO
 
-- [ ] Autoinkrementacja id
 - [ ] Wyliczenie `expected until now`
-- [ ] Postman na to, kolekcja, do repo dać!
-- [ ] Test na serwis aplikacyjny !
-- [ ] Mogę pokazać tabelke w wersji do druku w ładnym stylu bez podwójnej ramki.
-- [ ] Testy end to end w Cypress!
-  - [ ] bazka testserver i prod
+- [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
 - [ ] Sekcja "settings" w bazie danych zawierająca
 
   - [ ] aktualny rok, aktualny miesiąc
   - [ ] Sekcja config w DB z oczekiwanym czasem pracy w mc
 
-- [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
+- [ ] Autoinkrementacja id
+- [ ] Postman na to, kolekcja, do repo dać!
+- [ ] Test na serwis aplikacyjny !
+- [ ] Testy end to end w Cypress!
+
+  - [ ] bazka testserver i prod
+
 - [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
-      FUTURE:
+- [ ] kliknięcie na dzień wypełnia date
+- [ ] Przejdź na TypeScript ! Quality 📈
+
+FUTURE:
 
 - [ ] Grafana do monitoringu :)
 - [ ] Kafka for fun, wysyłanie np maili wiadomości do mnie?
@@ -53,7 +57,8 @@ http://localhost:3000/api/save_worktime_entry
 - [x] Kasowanie wpisu z tabeli
 - [x] table from allows doing this: 1:2
 - [x] mixed not sorted table / db content, find solution
-- [ ] wersja do druku
+- [x] Mogę pokazać tabelke w wersji do druku w ładnym stylu bez podwójnej ramki.
+- [x] wersja do druku
 
 BUGI:
 

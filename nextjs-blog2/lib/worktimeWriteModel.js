@@ -23,3 +23,11 @@ export const deleteEntry = async (database, date, id) => {
   const entryPath = `${dayPath}/entrys/${id}`;
   await database.delete(entryPath);
 };
+
+// TODO where call it? Custom command?
+export const initializeNewMonth = async (database, year, month) => {
+  for (let i = 0; i < new Date(year, month, 0).getDate(); i++) {
+    const saveToDayPath = `/years/${year}/${month}/${parseInt(i)}`;
+    await database.saveData(saveToDayPath, { description: "", time: "00:00" });
+  }
+};
