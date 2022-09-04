@@ -4,6 +4,8 @@ import {
   sumHoursAndMinutes,
 } from "../worktime";
 
+import moment from "moment";
+
 describe("Sum to hour and minutes", () => {
   it("sums hour and minutes, two items", () => {
     let myArray = ["01:40", "03:50"];

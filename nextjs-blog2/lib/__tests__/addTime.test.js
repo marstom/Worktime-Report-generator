@@ -54,17 +54,19 @@ describe("dataformat from date form on real database test", () => {
       date: "2022-08-21",
       descripton: "To jest opis",
       time: "1:30",
+      isDayOff: false,
     };
     const database = new JSONDatabase("/tmp/workcalc/worktime_sketch4");
     const id = apiRequestDesign.id;
     const date = apiRequestDesign.date;
     const descripton = apiRequestDesign.descripton;
     const time = apiRequestDesign.time;
-    await writeEntryToDay(database, id, date, descripton, time);
+    const isDayOff = apiRequestDesign.isDayOff;
+    await writeEntryToDay(database, id, date, descripton, time, isDayOff);
     let readedData = await readEntryForDay(database, "1", date);
     expect(readedData).toEqual({ description: "To jest opis", time: "01:30" });
     await deleteEntry(database, date, id);
     readedData = await database.getData("/years/2022/08/21");
-    expect(readedData).toEqual({ entrys: {} });
+    expect(readedData).toEqual({ isDayOff: false, entrys: {} });
   });
 });

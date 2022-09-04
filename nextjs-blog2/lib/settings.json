@@ -1,5 +1,14 @@
 {
   "currentYear": "2022",
   "currentMonth": "09",
-  "activeDatabaseName": "timeEntrysDb.json"
+  "activeDatabaseName": "timeEntrysDb.json",
+  "yearsSettings": {
+    "2022": {
+      "8": { "workDays": 22, "workHours": 176, "daysOff": 9 },
+      "9": { "workDays": 22, "workHours": 176, "daysOff": 8 },
+      "10": { "workDays": 21, "workHours": 168, "daysOff": 10 },
+      "11": { "workDays": 20, "workHours": 160, "daysOff": 10 },
+      "12": { "workDays": 21, "workHours": 168, "daysOff": 10 }
+    }
+  }
 }

@@ -24,13 +24,6 @@ http://localhost:3000/api/save_worktime_entry
 
 ## TODO
 
-- [ ] Wyliczenie `expected until now`
-- [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
-- [ ] Sekcja "settings" w bazie danych zawierająca
-
-  - [ ] aktualny rok, aktualny miesiąc
-  - [ ] Sekcja config w DB z oczekiwanym czasem pracy w mc
-
 - [ ] Autoinkrementacja id
 - [ ] Postman na to, kolekcja, do repo dać!
 - [ ] Test na serwis aplikacyjny !
@@ -39,7 +32,6 @@ http://localhost:3000/api/save_worktime_entry
   - [ ] bazka testserver i prod
 
 - [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
-- [ ] kliknięcie na dzień wypełnia date
 - [ ] Przejdź na TypeScript ! Quality 📈
 
 FUTURE:
@@ -48,7 +40,26 @@ FUTURE:
 - [ ] Kafka for fun, wysyłanie np maili wiadomości do mnie?
 - [ ] CI/CD ?
 - [ ] Instalacja tego ustrojstwa na moim serwerze OVH
+
   - [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
+
+- [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
+
+BUGI:
+
+- [ ] can send undefined time!
+
+## SP 04
+
+- [ ] Można oznaczyć dzień wolny na szaro
+- [ ] Sekcja "settings" w bazie danych zawierająca
+
+  - [ ] aktualny rok, aktualny miesiąc
+  - [ ] Sekcja config w DB z oczekiwanym czasem pracy w mc
+
+- [ ] Wyliczenie `expected until now`
+- [ ] research - komunikacja między komponentami
+- [ ] kliknięcie na dzień wypełnia dane
 
 ## SP 03
 
@@ -59,7 +70,3 @@ FUTURE:
 - [x] mixed not sorted table / db content, find solution
 - [x] Mogę pokazać tabelke w wersji do druku w ładnym stylu bez podwójnej ramki.
 - [x] wersja do druku
-
-BUGI:
-
-- [ ] can send undefined time!

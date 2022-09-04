@@ -9,6 +9,7 @@ const TimesheetForm = (props) => {
   const [descripton, setDescription] = useState();
   const [timeHh, setTimeHh] = useState();
   const [timeMm, setTimeMm] = useState();
+  const [isDayOff, setIsDayOff] = useState();
 
   useEffect(() => {}, [props.tableResponse]);
 
@@ -18,6 +19,7 @@ const TimesheetForm = (props) => {
       date,
       descripton,
       time: `${timeHh}:${timeMm}`,
+      isDayOff: isDayOff,
     };
     const response = await axios.post("api/save_worktime_entry", apiRequest);
     props.setTableResponse(response.data);
@@ -100,6 +102,10 @@ const TimesheetForm = (props) => {
               type="button"
               className={st.delete}
               value="Delete"
+            ></input>
+            <input
+              type="checkbox"
+              onClick={(e) => setIsDayOff(e.target.checked)}
             ></input>
           </div>
         </div>

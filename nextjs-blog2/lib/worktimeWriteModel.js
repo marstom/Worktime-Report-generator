@@ -7,6 +7,7 @@ export const writeEntryToDay = async (
   date,
   description,
   time,
+  isDayOff,
 ) => {
   const [year, month, day] = date.split("-");
   const saveToDayPath = `/years/${year}/${month}/${parseInt(day)}`;
@@ -14,13 +15,15 @@ export const writeEntryToDay = async (
   const [hh, mm] = time.split(":");
   time = `${zeroPad(hh, 2)}:${zeroPad(mm, 2)}`;
 
-  await database.saveData(saveToDayPath + entryPath, { description, time });
+  await database.updateData(saveToDayPath, { isDayOff: isDayOff });
+  await database.updateData(saveToDayPath + entryPath, { description, time });
 };
 
 export const deleteEntry = async (database, date, id) => {
   const [year, month, day] = date.split("-");
-  const dayPath = `/years/${year}/${month}/${day}`;
+  const dayPath = `/years/${year}/${month}/${parseInt(day)}`;
   const entryPath = `${dayPath}/entrys/${id}`;
+  console.log(`Entry path: ${entryPath}`);
   await database.delete(entryPath);
 };
 

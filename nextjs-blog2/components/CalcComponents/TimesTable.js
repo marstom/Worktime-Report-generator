@@ -4,13 +4,23 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const TimesTable = (props) => {
+  const router = useRouter();
+
   const isWeekend = (entry) => {
     return ["Saturday", "Sunday"].includes(entry.day);
   };
-  const router = useRouter();
+
+  const isDayOff = (entry) => {
+    return entry;
+  };
 
   const goToPrintable = () => {
     router.push("/workcalc/print");
+  };
+
+  const editEntry = (entry) => {
+    console.log(entry);
+    // TODO {id: '1', description: 'taksi', time: '01:01'} - easy, only fill form - howto? communicate between components?
   };
 
   return (
@@ -32,10 +42,11 @@ const TimesTable = (props) => {
             props.tableData.currentMonth.map((day) => {
               return day.entrys.map((entry) => (
                 <tr
+                  onClick={() => editEntry(entry)}
                   key={`${day.id} ${entry.id}`}
                   className={classnames({
                     [st.row]: true,
-                    [st.row_gray]: isWeekend(day),
+                    [st.row_gray]: isWeekend(day) | (day.isDayOff === true),
                   })}
                 >
                   <td className={st.info}>{entry.id}</td>

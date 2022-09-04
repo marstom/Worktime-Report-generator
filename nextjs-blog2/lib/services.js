@@ -23,12 +23,15 @@ export class SaveWorktimeEntryService {
       worktimeEntryRequestData.date,
       worktimeEntryRequestData.descripton,
       worktimeEntryRequestData.time,
+      worktimeEntryRequestData.isDayOff,
     );
   }
 
   async deleteWorktimeEntity(entryData) {
     console.log("----entity data-------------------------");
     console.log(entryData);
+    console.log(entryData.id);
+    // TODO bug bo jest 04 a nie 4
     await deleteEntry(this.database, entryData.date, entryData.id);
   }
 

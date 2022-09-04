@@ -7,7 +7,7 @@ export default async function handler(req, res) {
       `!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!request delete data ${req.body}`,
     );
     const service = new SaveWorktimeEntryService();
-    service.deleteWorktimeEntity(req.body);
+    await service.deleteWorktimeEntity(req.body);
     return res.status(201).json({ message: "Deleted", data: req.body });
   }
   return res.status(400).json({ error: "Accepts only delete method" });
