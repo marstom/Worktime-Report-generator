@@ -6,3 +6,8 @@ export const loadedSettings = async () => {
   settingsDb.reload();
   return await settingsDb.getData("/");
 };
+
+export const getSetting = async (path) => {
+  settingsDb.reload();
+  return await settingsDb.getData(path);
+};

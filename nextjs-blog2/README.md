@@ -24,7 +24,7 @@ http://localhost:3000/api/save_worktime_entry
 
 ## TODO
 
-- [ ] Autoinkrementacja id
+- [ ] Autoinkrementacja id albo UUID
 - [ ] Postman na to, kolekcja, do repo dać!
 - [ ] Test na serwis aplikacyjny !
 - [ ] Testy end to end w Cypress!
@@ -49,6 +49,7 @@ FUTURE:
   - [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 
 - [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
+- [ ] refactor, niech struktura db odpowiada api żeby było najprościej
 
 BUGI:
 
@@ -56,15 +57,17 @@ BUGI:
 
 ## SP 04
 
-- [ ] Można oznaczyć dzień wolny na szaro
-- [ ] Sekcja "settings" w bazie danych zawierająca
+- [x] Można oznaczyć dzień wolny na szaro
+- [x] Sekcja "settings" w bazie danych zawierająca
+- [x] kliknięcie na dzień wypełnia dane
 
-  - [ ] aktualny rok, aktualny miesiąc
-  - [ ] Sekcja config w DB z oczekiwanym czasem pracy w mc
+  - [x] aktualny rok, aktualny miesiąc
+  - [x] Sekcja config w DB z oczekiwanym czasem pracy w mc
+  - [ ] Użyj czasu oczekiwanego pracy w apce
+  - [ ] Użyj bazy danych z settingsów zamiast hardcoded pracy w apce
 
 - [ ] Wyliczenie `expected until now`
 - [ ] research - komunikacja między komponentami
-- [ ] kliknięcie na dzień wypełnia dane
 
 ## SP 03
 
