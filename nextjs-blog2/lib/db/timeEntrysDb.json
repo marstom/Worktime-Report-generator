@@ -2,77 +2,45 @@
   "years": {
     "2022": {
       "08": {
-        "14": {
-          "entrys": {
-            "1": {
-              "description": "asdf asdf ",
-              "time": "01:30"
-            }
-          }
-        },
-        "22": {
-          "entrys": {
-            "1": {
-              "description": "efasf",
-              "time": "01:30"
-            }
-          }
-        }
+        "14": {}
       },
       "09": {
-        "3": {
-          "entrys": {
-            "1": {
-              "time": "00:00"
-            }
-          }
-        },
         "4": {
           "entrys": {
             "1": {
-              "time": "00:00"
+              "description": "k",
+              "time": "04:04"
+            },
+            "[object Object]": {
+              "description": "k",
+              "time": "01:12"
             }
-          }
+          },
+          "isDayOff": false
         },
-        "14": {
+        "13": {
           "entrys": {
             "1": {
-              "description": "taksi",
-              "time": "01:01"
-            }
-          }
-        },
-        "15": {
-          "entrys": {
-            "1": {
-              "description": "taksi",
-              "time": "01:01"
+              "description": "hey",
+              "time": "00:13"
             },
             "2": {
-              "description": "taksi",
-              "time": "01:01"
+              "description": "hey",
+              "time": "00:12"
             },
             "3": {
-              "description": "taksi",
-              "time": "01:01"
+              "description": "hey",
+              "time": "00:12"
+            },
+            "4": {
+              "description": "tome",
+              "time": "00:12"
             }
-          }
+          },
+          "isDayOff": false
         },
-        "29": {
-          "entrys": {
-            "1": {
-              "description": "Koneic miesiąca",
-              "time": "01:01"
-            },
-            "2": {
-              "description": "Koneic miesiąca",
-              "time": "01:01"
-            },
-            "3": {
-              "description": "Koneic miesiąca",
-              "time": "01:01"
-            }
-          }
+        "04": {
+          "entrys": {}
         }
       }
     }

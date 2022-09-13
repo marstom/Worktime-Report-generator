@@ -213,3 +213,13 @@ describe("Utils functions", () => {
     });
   });
 });
+
+describe("I can calculate time until now", () => {
+  it("is show month work hours", () => {
+    console.log("hellllloooo");
+    let r = moment().startOf("month").fromNow();
+    console.log(r);
+    console.log(moment().daysInMonth());
+    // console.log(moment().)
+  });
+});

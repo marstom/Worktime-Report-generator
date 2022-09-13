@@ -18,9 +18,19 @@ const TimesTable = (props) => {
     router.push("/workcalc/print");
   };
 
-  const editEntry = (entry) => {
-    console.log(entry);
+  const editEntry = (entry, day) => {
+    // console.log(entry);
+    // console.log(day);
+    const [dd, mm, yyyy] = day.date.split(".");
+    const inputFormattedDate = `${yyyy}-${mm}-${dd}`;
+    const entryAllData = {
+      date: inputFormattedDate,
+      isDayOff: day.isDayOff,
+      ...entry,
+    };
+    console.log(entryAllData);
     // TODO {id: '1', description: 'taksi', time: '01:01'} - easy, only fill form - howto? communicate between components?
+    props.setFormDataFromEntry(entryAllData);
   };
 
   return (
@@ -42,7 +52,7 @@ const TimesTable = (props) => {
             props.tableData.currentMonth.map((day) => {
               return day.entrys.map((entry) => (
                 <tr
-                  onClick={() => editEntry(entry)}
+                  onClick={() => editEntry(entry, day)}
                   key={`${day.id} ${entry.id}`}
                   className={classnames({
                     [st.row]: true,

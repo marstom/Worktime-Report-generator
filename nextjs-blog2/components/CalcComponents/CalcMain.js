@@ -7,6 +7,7 @@ import TimesheetForm from "./TimesheetForm";
 const CalcMain = (props) => {
   const [tableData, setTableData] = useState();
   const [tableResponse, setTableResponse] = useState(); // TODO invistigate if any better communication between components solution exists - state management?
+  const [formDataFromEntry, setFormDataFromEntry] = useState();
 
   useEffect(() => {
     const loadData = async () => {
@@ -24,8 +25,12 @@ const CalcMain = (props) => {
       <TimesheetForm
         setTableResponse={setTableResponse}
         tableResponse={tableResponse}
+        formDataFromEntry={formDataFromEntry}
       ></TimesheetForm>
-      <TimesTable tableData={tableData}></TimesTable>
+      <TimesTable
+        tableData={tableData}
+        setFormDataFromEntry={setFormDataFromEntry}
+      ></TimesTable>
     </div>
   );
 };

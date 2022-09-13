@@ -1,6 +1,6 @@
 import st from "./CalcMain.module.scss";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 const TimesheetForm = (props) => {
@@ -11,7 +11,52 @@ const TimesheetForm = (props) => {
   const [timeMm, setTimeMm] = useState();
   const [isDayOff, setIsDayOff] = useState();
 
+  const idRef = useRef();
+  const dateRef = useRef();
+  const descriptionRef = useRef();
+  const mmRef = useRef();
+  const hhRef = useRef();
+  const isDayOffRef = useRef();
+
   useEffect(() => {}, [props.tableResponse]);
+  useEffect(() => {
+    console.log("Component table clicked an data:");
+    // console.log(props.formDataFromEntry['id'])
+    setId(props.formDataFromEntry ? props.formDataFromEntry.id : "");
+    setDate(
+      (dateRef.current.value = props.formDataFromEntry
+        ? props.formDataFromEntry.date
+        : ""),
+    );
+    setDescription(
+      (descriptionRef.current.value = props.formDataFromEntry
+        ? props.formDataFromEntry.description
+        : ""),
+    );
+    const [hh, mm] = props.formDataFromEntry
+      ? props.formDataFromEntry.time.split(":")
+      : ["", ""];
+    setTimeMm(mm);
+    setTimeHh(hh);
+    setIsDayOff(
+      props.formDataFromEntry ? props.formDataFromEntry.isDayOff : "",
+    );
+
+    idRef.current.value = props.formDataFromEntry
+      ? props.formDataFromEntry.id
+      : "";
+    dateRef.current.value = props.formDataFromEntry
+      ? props.formDataFromEntry.date
+      : "";
+    descriptionRef.current.value = props.formDataFromEntry
+      ? props.formDataFromEntry.description
+      : "";
+    mmRef.current.value = mm;
+    hhRef.current.value = hh;
+    isDayOffRef.current.checked = props.formDataFromEntry
+      ? props.formDataFromEntry.isDayOff
+      : "";
+  }, [props.formDataFromEntry]);
 
   const addModifyClick = async () => {
     const apiRequest = {
@@ -46,7 +91,11 @@ const TimesheetForm = (props) => {
             <label>ID: </label>
           </div>
           <div className={st.col_75}>
-            <input onChange={(e) => setId(e.target.value)} type="text"></input>
+            <input
+              ref={idRef}
+              onChange={(e) => setId(e.target.value)}
+              type="text"
+            ></input>
           </div>
         </div>
 
@@ -56,6 +105,7 @@ const TimesheetForm = (props) => {
           </div>
           <div className={st.col_75}>
             <input
+              ref={dateRef}
               onChange={(e) => setDate(e.target.value)}
               type="date"
             ></input>
@@ -68,6 +118,7 @@ const TimesheetForm = (props) => {
           </div>
           <div className={st.col_75}>
             <textarea
+              ref={descriptionRef}
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
@@ -78,11 +129,13 @@ const TimesheetForm = (props) => {
           </div>
           <div className={st.col_75}>
             <input
+              ref={hhRef}
               onChange={(e) => setTimeHh(e.target.value)}
               type="text"
               id={st.time}
             ></input>
             <input
+              ref={mmRef}
               onChange={(e) => setTimeMm(e.target.value)}
               type="text"
               id={st.time}
@@ -104,6 +157,7 @@ const TimesheetForm = (props) => {
               value="Delete"
             ></input>
             <input
+              ref={isDayOffRef}
               type="checkbox"
               onClick={(e) => setIsDayOff(e.target.checked)}
             ></input>

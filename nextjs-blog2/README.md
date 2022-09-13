@@ -33,12 +33,17 @@ http://localhost:3000/api/save_worktime_entry
 
 - [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
 - [ ] Przejdź na TypeScript ! Quality 📈
+- [ ] Dodać billing gdzie będzie podawało się kwoty
+  - [ ] billing ma koszty dodatkowe
+  - [ ] billing liczy netto i brutto
+  - [ ] billing wyświetla się na printable version
 
 FUTURE:
 
 - [ ] Grafana do monitoringu :)
 - [ ] Kafka for fun, wysyłanie np maili wiadomości do mnie?
 - [ ] CI/CD ?
+- [ ] Deploy na moje OVH z uwieżytelnianiem lub vpn'em
 - [ ] Instalacja tego ustrojstwa na moim serwerze OVH
 
   - [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
