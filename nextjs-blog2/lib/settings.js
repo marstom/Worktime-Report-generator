@@ -1,5 +1,8 @@
 import { JSONDatabase } from "./database";
 
-const settings = new JSONDatabase("./lib/settings.json");
+export const settingsDb = new JSONDatabase("./lib/settings.json");
 
-export default settings;
+export const loadedSettings = async () => {
+  settingsDb.reload();
+  return await settingsDb.getData("/");
+};

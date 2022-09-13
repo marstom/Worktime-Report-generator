@@ -13,7 +13,11 @@ const CalcMain = (props) => {
     const loadData = async () => {
       console.log("fethcing months ....");
       //TODO pass year/month from settings, not hardcode
-      const response = await fetch("/api/worktimesheet/monthly/2022/09");
+      const responseSettings = await fetch("/api/worktimesheet/settings");
+      const settingsData = await responseSettings.json();
+      const response = await fetch(
+        `/api/worktimesheet/monthly/${settingsData.currentYear}/${settingsData.currentMonth}`,
+      );
       const data = await response.json();
       setTableData(data);
     };

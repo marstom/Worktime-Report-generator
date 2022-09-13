@@ -25,7 +25,7 @@ const PrintableTimesTable = (props) => {
                   key={`${day.id} ${entry.id}`}
                   className={classnames({
                     [st.row]: true,
-                    [st.row_gray]: isWeekend(day),
+                    [st.row_gray]: isWeekend(day) | (day.isDayOff === true),
                   })}
                 >
                   <td>{entry.id === "1" ? day.date : ""}</td>

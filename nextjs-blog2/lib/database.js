@@ -28,4 +28,7 @@ export class JSONDatabase {
   async delete(path) {
     this.db.delete(path);
   }
+  async reload() {
+    this.db.reload();
+  }
 }
