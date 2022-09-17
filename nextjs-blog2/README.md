@@ -22,7 +22,9 @@ Endpoint na zapisanie czasu pracy:
 
 http://localhost:3000/api/save_worktime_entry
 
-## TODO
+---
+
+## Backlog
 
 - [ ] Postman na to, kolekcja, do repo dać!
 - [ ] Test na serwis aplikacyjny !
@@ -39,7 +41,7 @@ http://localhost:3000/api/save_worktime_entry
 
 - [ ] Dodać github actions - automatyczne testy
 
-FUTURE:
+### FUTURE:
 
 - [ ] Grafana do monitoringu :)
 - [ ] Kafka for fun, wysyłanie np maili wiadomości do mnie?
@@ -49,11 +51,11 @@ FUTURE:
 - [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
 - [ ] refactor, niech struktura db odpowiada api żeby było najprościej
 
-BUGI:
+### BUGI:
 
 - [ ] can send undefined time!
 
-## SP 05
+## SP 05 start- 17.09.2022
 
 - [x] Wyliczenie `expected until now`
 - [ ] Autoinkrementacja id albo UUID
@@ -62,7 +64,7 @@ BUGI:
 - [ ] Instalacja tego ustrojstwa na moim serwerze OVH
 - [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 
-## SP 04
+## SP 04 -- finished 17.09.2022
 
 - [x] Można oznaczyć dzień wolny na szaro
 - [x] Sekcja "settings" w bazie danych zawierająca
@@ -74,7 +76,7 @@ BUGI:
 
 - [x] research - komunikacja między komponentami - bardo prosta - useState na tę chwilę starcza.
 
-## SP 03
+## SP 03 -- finished start of 09.2022
 
 - [x] Sortowanie entry wg dnia w bazie danych lub na frontendzie
 - [x] Mogę zapisać do bazy czas pracy.

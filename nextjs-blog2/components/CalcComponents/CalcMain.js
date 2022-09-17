@@ -10,6 +10,8 @@ const CalcMain = (props) => {
   const [tableResponse, setTableResponse] = useState(); // TODO invistigate if any better communication between components solution exists - state management?
   const [formDataFromEntry, setFormDataFromEntry] = useState();
 
+  const [idForm, setIdForm] = useState();
+  const [idTable, setIdTable] = useState();
   useEffect(() => {
     const loadData = async () => {
       console.log("fethcing months ....");
@@ -37,11 +39,15 @@ const CalcMain = (props) => {
         setTableResponse={setTableResponse}
         tableResponse={tableResponse}
         formDataFromEntry={formDataFromEntry}
+        setIdForm={setIdForm}
+        idForm={idForm}
       ></TimesheetForm>
       <TimesTable
         tableData={tableData}
         setFormDataFromEntry={setFormDataFromEntry}
         settingsData={settingsData}
+        setIdTable={setIdTable}
+        idForm={idForm}
       ></TimesTable>
     </div>
   );

@@ -6,41 +6,84 @@
       },
       "09": {
         "4": {
-          "entrys": {
-            "1": {
-              "description": "k",
-              "time": "04:04"
-            },
-            "[object Object]": {
-              "description": "k",
-              "time": "01:12"
-            }
-          },
+          "entrys": {},
           "isDayOff": false
         },
+        "12": {
+          "isDayOff": false,
+          "entrys": {}
+        },
         "13": {
-          "entrys": {
-            "1": {
-              "description": "hey",
-              "time": "00:13"
-            },
-            "2": {
-              "description": "hey",
-              "time": "00:12"
-            },
-            "3": {
-              "description": "hey",
-              "time": "00:12"
-            },
-            "4": {
-              "description": "tome",
-              "time": "00:12"
-            }
-          },
+          "entrys": {},
           "isDayOff": false
+        },
+        "14": {
+          "isDayOff": true,
+          "entrys": {}
+        },
+        "17": {
+          "isDayOff": "",
+          "entrys": {
+            "869409db-8659-45b7-b637-1d14662e2221": {
+              "description": "troche",
+              "time": "02:01"
+            },
+            "ff40d8ee-a42d-49e8-bac6-5f53fc8df49d": {
+              "description": "jeszcze",
+              "time": "02:01"
+            }
+          }
+        },
+        "19": {
+          "isDayOff": "",
+          "entrys": {
+            "f36ae199-76a0-4785-9f81-187c70005909": {
+              "description": "ha",
+              "time": "02:01"
+            }
+          }
+        },
+        "20": {
+          "isDayOff": "",
+          "entrys": {
+            "8985523e-5956-4066-9650-ddb095dc1682": {
+              "description": "ha",
+              "time": "02:01"
+            }
+          }
+        },
+        "21": {
+          "isDayOff": "",
+          "entrys": {}
         },
         "04": {
           "entrys": {}
+        }
+      },
+      "01": {
+        "13": {
+          "isDayOff": "",
+          "entrys": {
+            "1": {
+              "description": "1",
+              "time": "01:01"
+            }
+          }
+        }
+      }
+    },
+    "": {
+      "undefined": {
+        "NaN": {
+          "isDayOff": "",
+          "entrys": {
+            "description": "",
+            "time": "00:00",
+            "4b453c88-15f4-4559-b7c6-0cbf56d26b0c": {
+              "description": "",
+              "time": "00:00"
+            }
+          }
         }
       }
     }

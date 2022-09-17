@@ -1,7 +1,7 @@
-import st from "./CalcMain.module.scss";
-
 import { useEffect, useState, useRef } from "react";
+import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import st from "./CalcMain.module.scss";
 
 const TimesheetForm = (props) => {
   const [id, setId] = useState();
@@ -18,7 +18,18 @@ const TimesheetForm = (props) => {
   const hhRef = useRef();
   const isDayOffRef = useRef();
 
-  useEffect(() => {}, [props.tableResponse]);
+  const changeDateAction = (date) => {
+    setDate(date);
+    console.log("date:", date);
+    const uid = uuidv4();
+    idRef.current.value = uid;
+    setId(uid);
+  };
+
+  useEffect(() => {
+    console.log("Id form changed...");
+    props.setIdForm(id);
+  }, [idRef.current ? idRef.current.value : null]);
   useEffect(() => {
     console.log("Component table clicked an data:");
     // console.log(props.formDataFromEntry['id'])
@@ -56,6 +67,7 @@ const TimesheetForm = (props) => {
     isDayOffRef.current.checked = props.formDataFromEntry
       ? props.formDataFromEntry.isDayOff
       : "";
+    // props.setIdForm(id);
   }, [props.formDataFromEntry]);
 
   const addModifyClick = async () => {
@@ -68,6 +80,12 @@ const TimesheetForm = (props) => {
     };
     const response = await axios.post("api/save_worktime_entry", apiRequest);
     props.setTableResponse(response.data);
+  };
+
+  const newEntryClick = async () => {
+    const uid = uuidv4();
+    idRef.current.value = uid;
+    setId(uid);
   };
 
   const deleteClick = async () => {
@@ -106,7 +124,7 @@ const TimesheetForm = (props) => {
           <div className={st.col_75}>
             <input
               ref={dateRef}
-              onChange={(e) => setDate(e.target.value)}
+              onChange={(e) => changeDateAction(e.target.value)}
               type="date"
             ></input>
           </div>
@@ -149,6 +167,11 @@ const TimesheetForm = (props) => {
               onClick={addModifyClick}
               type="button"
               value="Add / Modify"
+            ></input>
+            <input
+              onClick={newEntryClick}
+              type="button"
+              value="New hash"
             ></input>
             <input
               onClick={deleteClick}
