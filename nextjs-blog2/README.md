@@ -30,11 +30,13 @@ http://localhost:3000/api/save_worktime_entry
 - [ ] Test na serwis aplikacyjny !
 - [ ] Testy end to end w Cypress!
 
-  - [ ] bazka testserver i prod
+- [ ] bazka testserver i prod
 
 - [ ] Przejdź na TypeScript ! Quality 📈
-- [ ] Dodać billing gdzie będzie podawało się kwoty
 
+- Fature billing
+
+  - [ ] Dodać billing gdzie będzie podawało się kwoty
   - [ ] billing ma koszty dodatkowe
   - [ ] billing liczy netto i brutto
   - [ ] billing wyświetla się na printable version
@@ -58,7 +60,8 @@ http://localhost:3000/api/save_worktime_entry
 ## SP 05 start- 17.09.2022
 
 - [x] Wyliczenie `expected until now`
-- [ ] Autoinkrementacja id albo UUID
+- [x] Autoinkrementacja id albo UUID
+- [x] podświetlam aktywny edytowany wiersz!
 - [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
 - [ ] Floating form, table is beside [] [.]
 - [ ] Instalacja tego ustrojstwa na moim serwerze OVH
