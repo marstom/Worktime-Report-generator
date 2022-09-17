@@ -49,6 +49,7 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
   const res = {
     currentMonthTotalHours: "0:00",
     currentMonthExpectedHours: "0:00",
+    expectedUntilNow: 0,
     currentMonth: [],
   };
 
@@ -75,6 +76,14 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
     data.total = sumHoursAndMinutes(timesArray);
     totalHoursArray.push(data.total);
     res.currentMonth.push(data);
+    console.log(data);
+    if (
+      data.day !== "Sunday" &&
+      data.day !== "Saturday" &&
+      data.entrys.length > 0
+    ) {
+      res.expectedUntilNow += 8;
+    }
   });
   res.currentMonthTotalHours = sumHoursAndMinutes(totalHoursArray);
   return res;

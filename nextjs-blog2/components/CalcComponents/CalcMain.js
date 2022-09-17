@@ -6,6 +6,7 @@ import TimesheetForm from "./TimesheetForm";
 
 const CalcMain = (props) => {
   const [tableData, setTableData] = useState();
+  const [settingsData, setSettingsData] = useState();
   const [tableResponse, setTableResponse] = useState(); // TODO invistigate if any better communication between components solution exists - state management?
   const [formDataFromEntry, setFormDataFromEntry] = useState();
 
@@ -20,6 +21,12 @@ const CalcMain = (props) => {
       );
       const data = await response.json();
       setTableData(data);
+      const currentYear = settingsData["currentYear"];
+      const currentMonth = settingsData["currentMonth"];
+      setSettingsData({
+        currentMonthExpectedHours:
+          settingsData["yearsSettings"][currentYear][currentMonth]["workHours"],
+      });
     };
     loadData();
   }, [tableResponse]);
@@ -34,6 +41,7 @@ const CalcMain = (props) => {
       <TimesTable
         tableData={tableData}
         setFormDataFromEntry={setFormDataFromEntry}
+        settingsData={settingsData}
       ></TimesTable>
     </div>
   );

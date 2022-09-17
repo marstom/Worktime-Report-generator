@@ -77,7 +77,7 @@ const TimesTable = (props) => {
       <div>
         <div>
           Expected at the end:{" "}
-          {props.tableData && props.tableData.currentMonthExpectedHours}
+          {props.settingsData && props.settingsData.currentMonthExpectedHours}
         </div>
         <div>
           Expected until now:{" "}

@@ -34,9 +34,12 @@ http://localhost:3000/api/save_worktime_entry
 - [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
 - [ ] Przejdź na TypeScript ! Quality 📈
 - [ ] Dodać billing gdzie będzie podawało się kwoty
+
   - [ ] billing ma koszty dodatkowe
   - [ ] billing liczy netto i brutto
   - [ ] billing wyświetla się na printable version
+
+- [ ] Dodać github actions - automatyczne testy
 
 FUTURE:
 
@@ -55,18 +58,21 @@ BUGI:
 
 - [ ] can send undefined time!
 
+## SP 05
+
+- [ ] Wyliczenie `expected until now`
+- [ ] Floating form, table is beside [] [.]
+
 ## SP 04
 
 - [x] Można oznaczyć dzień wolny na szaro
 - [x] Sekcja "settings" w bazie danych zawierająca
 - [x] kliknięcie na dzień wypełnia dane
+- [x] aktualny rok, aktualny miesiąc
+- [x] Sekcja config w DB z oczekiwanym czasem pracy w mc
+- [ ] Użyj czasu oczekiwanego pracy w apce
+- [ ] Użyj bazy danych z settingsów zamiast hardcoded pracy w apce
 
-  - [x] aktualny rok, aktualny miesiąc
-  - [x] Sekcja config w DB z oczekiwanym czasem pracy w mc
-  - [ ] Użyj czasu oczekiwanego pracy w apce
-  - [ ] Użyj bazy danych z settingsów zamiast hardcoded pracy w apce
-
-- [ ] Wyliczenie `expected until now`
 - [ ] research - komunikacja między komponentami
 
 ## SP 03
