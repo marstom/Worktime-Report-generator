@@ -24,14 +24,12 @@ http://localhost:3000/api/save_worktime_entry
 
 ## TODO
 
-- [ ] Autoinkrementacja id albo UUID
 - [ ] Postman na to, kolekcja, do repo dać!
 - [ ] Test na serwis aplikacyjny !
 - [ ] Testy end to end w Cypress!
 
   - [ ] bazka testserver i prod
 
-- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
 - [ ] Przejdź na TypeScript ! Quality 📈
 - [ ] Dodać billing gdzie będzie podawało się kwoty
 
@@ -47,9 +45,6 @@ FUTURE:
 - [ ] Kafka for fun, wysyłanie np maili wiadomości do mnie?
 - [ ] CI/CD ?
 - [ ] Deploy na moje OVH z uwieżytelnianiem lub vpn'em
-- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
-
-  - [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 
 - [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
 - [ ] refactor, niech struktura db odpowiada api żeby było najprościej
@@ -60,8 +55,12 @@ BUGI:
 
 ## SP 05
 
-- [ ] Wyliczenie `expected until now`
+- [x] Wyliczenie `expected until now`
+- [ ] Autoinkrementacja id albo UUID
+- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
 - [ ] Floating form, table is beside [] [.]
+- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
+- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 
 ## SP 04
 
@@ -70,10 +69,10 @@ BUGI:
 - [x] kliknięcie na dzień wypełnia dane
 - [x] aktualny rok, aktualny miesiąc
 - [x] Sekcja config w DB z oczekiwanym czasem pracy w mc
-- [ ] Użyj czasu oczekiwanego pracy w apce
-- [ ] Użyj bazy danych z settingsów zamiast hardcoded pracy w apce
+- [x] Użyj czasu oczekiwanego pracy w apce
+- [x] Użyj bazy danych z settingsów zamiast hardcoded pracy w apce
 
-- [ ] research - komunikacja między komponentami
+- [x] research - komunikacja między komponentami - bardo prosta - useState na tę chwilę starcza.
 
 ## SP 03
 

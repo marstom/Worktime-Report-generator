@@ -44,6 +44,7 @@ describe("Utils functions", () => {
     const dat = {
       14: {
         day: "Sun",
+        isDayOff: false,
         entrys: {
           1: {
             description: "MY1 - workon calcualtor",
@@ -61,6 +62,7 @@ describe("Utils functions", () => {
       },
       15: {
         day: "Mon",
+        isDayOff: false,
         entrys: {
           1: {
             description: "dzień z Adasiem",
@@ -76,10 +78,12 @@ describe("Utils functions", () => {
     expect(result).toEqual({
       currentMonthTotalHours: "12:00",
       currentMonthExpectedHours: "0:00",
+      expectedUntilNow: 8,
       currentMonth: [
         {
           id: 1,
           date: "14.08.2022",
+          isDayOff: false,
           day: "Sunday",
           total: "4:00",
           entrys: [
@@ -103,6 +107,7 @@ describe("Utils functions", () => {
         {
           id: 2,
           date: "15.08.2022",
+          isDayOff: false,
           day: "Monday",
           total: "8:00",
           entrys: [
@@ -120,6 +125,7 @@ describe("Utils functions", () => {
   it("convert from raw datatabase data to api contract Unsorted, not reversed 0x day", () => {
     const dat = {
       4: {
+        isDayOff: false,
         entrys: {
           1: {
             description: "MY1 - workon calcualtor",
@@ -136,6 +142,7 @@ describe("Utils functions", () => {
         },
       },
       26: {
+        isDayOff: false,
         entrys: {
           1: {
             description: "dzień z Adasiem",
@@ -144,6 +151,7 @@ describe("Utils functions", () => {
         },
       },
       25: {
+        isDayOff: false,
         entrys: {
           1: {
             description: "dzień z Adasiem",
@@ -159,10 +167,12 @@ describe("Utils functions", () => {
     expect(result).toEqual({
       currentMonthTotalHours: "20:00",
       currentMonthExpectedHours: "0:00",
+      expectedUntilNow: 24,
       currentMonth: [
         {
           id: 1,
           date: "04.08.2022",
+          isDayOff: false,
           day: "Thursday",
           total: "4:00",
           entrys: [
@@ -186,6 +196,7 @@ describe("Utils functions", () => {
         {
           id: 2,
           date: "25.08.2022",
+          isDayOff: false,
           day: "Thursday",
           total: "8:00",
           entrys: [
@@ -199,6 +210,7 @@ describe("Utils functions", () => {
         {
           id: 3,
           date: "26.08.2022",
+          isDayOff: false,
           day: "Friday",
           total: "8:00",
           entrys: [

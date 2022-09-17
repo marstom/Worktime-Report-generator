@@ -80,6 +80,7 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
     if (
       data.day !== "Sunday" &&
       data.day !== "Saturday" &&
+      !data.isDayOff &&
       data.entrys.length > 0
     ) {
       res.expectedUntilNow += 8;
