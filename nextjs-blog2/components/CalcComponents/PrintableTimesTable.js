@@ -20,7 +20,7 @@ const PrintableTimesTable = (props) => {
         <tbody>
           {props.tableData &&
             props.tableData.currentMonth.map((day) => {
-              return day.entrys.map((entry) => (
+              return day.entrys.map((entry, index) => (
                 <tr
                   key={`${day.id} ${entry.id}`}
                   className={classnames({
@@ -28,10 +28,10 @@ const PrintableTimesTable = (props) => {
                     [st.row_gray]: isWeekend(day) | (day.isDayOff === true),
                   })}
                 >
-                  <td>{entry.id === "1" ? day.date : ""}</td>
+                  <td>{index === 0 ? day.date : ""}</td>
                   <td>{entry.description}</td>
                   <td>{entry.time}</td>
-                  <td>{entry.id === "1" ? day.total : ""}</td>
+                  <td>{index === 0 ? day.total : ""}</td>
                 </tr>
               ));
             })}
