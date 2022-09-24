@@ -25,4 +25,5 @@ yarn-debug.log*
 yarn-error.log*
 
 ./lib/db/timeEntrysDb.json
+lib/db/timeEntrysDb.json
 
