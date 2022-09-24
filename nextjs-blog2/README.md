@@ -22,6 +22,29 @@ Endpoint na zapisanie czasu pracy:
 
 http://localhost:3000/api/save_worktime_entry
 
+### Local setup nginx on iOS
+
+brew install nginx
+
+brew services start nginx
+
+Teraz nginx jeset dostępny w przeglądarce tutaj:
+
+http://localhost:8080/
+
+Opcje nginx'a
+vim /opt/homebrew/opt/nginx/nginx.conf
+vim /opt/homebrew/var/www
+
+/opt/homebrew/opt/nginx
+/opt/homebrew/var/www
+
+Ukryte
+/opt/homebrew/etc/nginx/nginx.conf.default
+/opt/homebrew/etc/nginx/nginx.conf
+/opt/homebrew/Cellar/nginx/1.23.1/.bottle/etc/nginx/nginx.conf.default
+/opt/homebrew/Cellar/nginx/1.23.1/.bottle/etc/nginx/nginx.conf
+
 ---
 
 ## Backlog
