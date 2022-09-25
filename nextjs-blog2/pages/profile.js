@@ -11,13 +11,14 @@ const Profile = () => {
     redirectIfFound: false,
   });
 
-  if (!user) return <div>Please login</div>;
+  if (user ? !user.isLoggedIn : false) return <div>Please login</div>;
 
   if (error) return <div>failed to load</div>;
   return (
     <Layout>
       <h1>This is profile page</h1>
       {data ? <div>{JSON.stringify(data)}</div> : <div>loading...</div>}
+      <div>{JSON.stringify(user)}</div>
     </Layout>
   );
 };

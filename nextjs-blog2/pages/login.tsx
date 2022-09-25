@@ -7,7 +7,7 @@ import Layout from "components/layout";
 export default function Login() {
   // here we just check if user is already logged in and redirect to profile
   const { mutateUser } = useUser({
-    redirectTo: "/profile-sg",
+    redirectTo: "/profile-sg", // TODO main dashboard or workcalc let me think
     redirectIfFound: true,
   });
 
@@ -23,6 +23,7 @@ export default function Login() {
 
             const body = {
               username: event.currentTarget.username.value,
+              password: event.currentTarget.password.value,
             };
 
             try {
