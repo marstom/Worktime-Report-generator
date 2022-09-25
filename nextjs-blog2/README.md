@@ -1,5 +1,7 @@
 # Aplikacja do zapisu czasu pracy 👨🏼‍💻
 
+Repo: https://github.com/marstom/Worktime-report-generator
+
 ## Tutorial
 
 Ended [here](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
