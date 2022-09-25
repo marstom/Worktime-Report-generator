@@ -22,6 +22,11 @@ Endpoint na zapisanie czasu pracy:
 
 http://localhost:3000/api/save_worktime_entry
 
+Zobacz co dalej tutaj
+
+~/Github/next.js/examples/with-iron-session
+Chcę zaimplementować uwieżytelnianie iron!
+
 ### Local setup nginx on iOS
 
 brew install nginx
@@ -82,13 +87,13 @@ Ukryte
 
 ## SP 05 start- 17.09.2022
 
+- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
+- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
+- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
+- [ ] Floating form, table is beside [] [.]
 - [x] Wyliczenie `expected until now`
 - [x] Autoinkrementacja id albo UUID
 - [x] podświetlam aktywny edytowany wiersz!
-- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
-- [ ] Floating form, table is beside [] [.]
-- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
-- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 
 ## SP 04 -- finished 17.09.2022
 
