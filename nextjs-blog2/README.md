@@ -2,6 +2,19 @@
 
 Repo: https://github.com/marstom/Worktime-report-generator
 
+## Project setup
+
+1. Create .env.local & .env.prod with secrets, separate for prod & local
+
+```
+SECRET_COOKIE_PASSWORD=XXX
+USER_PASSWORD=XXX
+ONLY_USERNAME_AVAILABLE=XXX
+```
+
+2. install deps `yarn`
+3. Development `yarn dev`
+
 ## Tutorial
 
 Ended [here](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
@@ -14,7 +27,7 @@ Ended [here](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
 
 ## Docs
 
-Endpointy na dni:
+Endpoints for days:
 
 http://localhost:3000/api/worktimesheet/monthly/2022
 http://localhost:3000/api/worktimesheet/monthly/2022/08
@@ -27,32 +40,7 @@ http://localhost:3000/api/save_worktime_entry
 Zobacz co dalej tutaj
 
 ~/Github/next.js/examples/with-iron-session
-Chcę zaimplementować uwieżytelnianie iron!
-
-### Local setup nginx on iOS
-
-brew install nginx
-
-brew services start nginx
-
-Teraz nginx jeset dostępny w przeglądarce tutaj:
-
-http://localhost:8080/
-
-Opcje nginx'a
-vim /opt/homebrew/opt/nginx/nginx.conf
-vim /opt/homebrew/var/www
-
-/opt/homebrew/opt/nginx
-/opt/homebrew/var/www
-
-Ukryte
-/opt/homebrew/etc/nginx/nginx.conf.default
-/opt/homebrew/etc/nginx/nginx.conf
-/opt/homebrew/Cellar/nginx/1.23.1/.bottle/etc/nginx/nginx.conf.default
-/opt/homebrew/Cellar/nginx/1.23.1/.bottle/etc/nginx/nginx.conf
-
----
+Implement auth usin iron session!
 
 ## Backlog
 
