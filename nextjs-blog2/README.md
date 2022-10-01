@@ -1,5 +1,20 @@
 # Aplikacja do zapisu czasu pracy 👨🏼‍💻
 
+Repo: https://github.com/marstom/Worktime-report-generator
+
+## Project setup
+
+1. Create .env.local & .env.prod with secrets, separate for prod & local
+
+```
+SECRET_COOKIE_PASSWORD=XXX
+USER_PASSWORD=XXX
+ONLY_USERNAME_AVAILABLE=XXX
+```
+
+2. install deps `yarn`
+3. Development `yarn dev`
+
 ## Tutorial
 
 Ended [here](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
@@ -12,7 +27,7 @@ Ended [here](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
 
 ## Docs
 
-Endpointy na dni:
+Endpoints for days:
 
 http://localhost:3000/api/worktimesheet/monthly/2022
 http://localhost:3000/api/worktimesheet/monthly/2022/08
@@ -22,30 +37,10 @@ Endpoint na zapisanie czasu pracy:
 
 http://localhost:3000/api/save_worktime_entry
 
-### Local setup nginx on iOS
+Zobacz co dalej tutaj
 
-brew install nginx
-
-brew services start nginx
-
-Teraz nginx jeset dostępny w przeglądarce tutaj:
-
-http://localhost:8080/
-
-Opcje nginx'a
-vim /opt/homebrew/opt/nginx/nginx.conf
-vim /opt/homebrew/var/www
-
-/opt/homebrew/opt/nginx
-/opt/homebrew/var/www
-
-Ukryte
-/opt/homebrew/etc/nginx/nginx.conf.default
-/opt/homebrew/etc/nginx/nginx.conf
-/opt/homebrew/Cellar/nginx/1.23.1/.bottle/etc/nginx/nginx.conf.default
-/opt/homebrew/Cellar/nginx/1.23.1/.bottle/etc/nginx/nginx.conf
-
----
+~/Github/next.js/examples/with-iron-session
+Implement auth usin iron session!
 
 ## Backlog
 
@@ -80,15 +75,23 @@ Ukryte
 
 - [ ] can send undefined time!
 
+## SP 06 WIP
+
+- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
+- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
+- [ ] Floating form, table is beside [] [.]
+
 ## SP 05 start- 17.09.2022
 
+- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
+  - [x] Uwieżytelniam się po iron-session
+  - [x] Spike, 1 chroniony endpoint
+  - [ ] Zabezpiecz api endpointy
+  - [ ] Zabezpiecz strony
+- [x] instalacja typescripta
 - [x] Wyliczenie `expected until now`
 - [x] Autoinkrementacja id albo UUID
 - [x] podświetlam aktywny edytowany wiersz!
-- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
-- [ ] Floating form, table is beside [] [.]
-- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
-- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 
 ## SP 04 -- finished 17.09.2022
 
