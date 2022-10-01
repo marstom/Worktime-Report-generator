@@ -1,0 +1,14 @@
+import { withIronSessionApiRoute } from "iron-session/next/dist";
+import { unauthorized } from "lib/auth";
+import { sessionOptions } from "lib/session";
+import { NextApiRequest, NextApiResponse } from "next";
+
+//  http.ServerResponse
+async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (unauthorized(req.session.user, res)) {
+    return;
+  }
+  setTimeout(() => res.status(200).json({ text: "Hello" }), 1000);
+}
+
+export default withIronSessionApiRoute(handler, sessionOptions);

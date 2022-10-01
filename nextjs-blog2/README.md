@@ -87,12 +87,20 @@ Ukryte
 
 - [ ] can send undefined time!
 
-## SP 05 start- 17.09.2022
+## SP 06 WIP
 
-- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
 - [ ] Instalacja tego ustrojstwa na moim serwerze OVH
 - [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
 - [ ] Floating form, table is beside [] [.]
+
+## SP 05 start- 17.09.2022
+
+- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
+  - [x] Uwieżytelniam się po iron-session
+  - [x] Spike, 1 chroniony endpoint
+  - [ ] Zabezpiecz api endpointy
+  - [ ] Zabezpiecz strony
+- [x] instalacja typescripta
 - [x] Wyliczenie `expected until now`
 - [x] Autoinkrementacja id albo UUID
 - [x] podświetlam aktywny edytowany wiersz!

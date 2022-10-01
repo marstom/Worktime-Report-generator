@@ -2,11 +2,10 @@ import { getTimeEntrysForDate, convertToApiContract } from "lib/worktime";
 import { NextApiRequest, NextApiResponse } from "next";
 import { sessionOptions } from "lib/session";
 import { withIronSessionApiRoute } from "iron-session/next";
+import { unauthorized } from "lib/auth";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const user = req.session.user;
-  if (!user || user.isLoggedIn === false) {
-    res.status(400).end();
+  if (unauthorized(req.session.user, res)) {
     return;
   }
 

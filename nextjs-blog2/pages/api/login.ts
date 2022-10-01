@@ -1,9 +1,9 @@
 import type { User } from "./user";
 
 import { Octokit } from "octokit";
+import { NextApiRequest, NextApiResponse } from "next";
 import { withIronSessionApiRoute } from "iron-session/next";
 import { sessionOptions } from "lib/session";
-import { NextApiRequest, NextApiResponse } from "next";
 const octokit = new Octokit();
 
 async function loginRoute(req: NextApiRequest, res: NextApiResponse) {
