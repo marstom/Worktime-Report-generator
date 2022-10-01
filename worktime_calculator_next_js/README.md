@@ -1,4 +1,4 @@
-# Aplikacja do zapisu czasu pracy 👨🏼‍💻
+# Worktime tracking app 👨🏼‍💻
 
 Repo: https://github.com/marstom/Worktime-report-generator
 
@@ -14,6 +14,23 @@ ONLY_USERNAME_AVAILABLE=XXX
 
 2. install deps `yarn`
 3. Development `yarn dev`
+4. Create empty database here `lib/db/timeEntrysDb.json`
+
+```json
+
+{
+    "years": {
+        "2022": {
+          "01": {}
+        }
+}
+```
+
+5. Adjust App settings here `lib/settings.json`
+
+```
+
+```
 
 ## Tutorial
 
@@ -37,7 +54,7 @@ Endpoint na zapisanie czasu pracy:
 
 http://localhost:3000/api/save_worktime_entry
 
-Zobacz co dalej tutaj
+Take a look at iron session examples
 
 ~/Github/next.js/examples/with-iron-session
 Implement auth usin iron session!

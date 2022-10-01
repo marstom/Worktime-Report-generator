@@ -32,5 +32,5 @@ console.log(
       description: e[1].description,
       time: e[1].time,
     };
-  })
+  }),
 );
