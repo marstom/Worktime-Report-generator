@@ -28,6 +28,12 @@ ONLY_USERNAME_AVAILABLE=XXX
 
 5. Adjust App settings here `lib/settings.json`
 
+Select there a year and month which you want to have
+
+Here is pritable footer data from api:
+http://localhost:3000/api/worktimesheet/settings
+modify settings.json
+
 ```
 
 ```
@@ -67,8 +73,6 @@ Implement auth usin iron session!
 
 - [ ] bazka testserver i prod
 
-- [ ] Przejdź na TypeScript ! Quality 📈
-
 - Fature billing
 
   - [ ] Dodać billing gdzie będzie podawało się kwoty
@@ -93,6 +97,12 @@ Implement auth usin iron session!
 - [ ] can send undefined time!
 
 ## SP 06 WIP
+
+- [ ] Przejdź na TypeScript ! Quality 📈
+
+  - [x] Przepisać LIB
+  - [x] Przepisać testy
+  - [ ] Przepisać komponenty
 
 - [ ] Instalacja tego ustrojstwa na moim serwerze OVH
 - [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą

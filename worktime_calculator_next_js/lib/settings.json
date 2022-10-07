@@ -1,7 +1,7 @@
 {
   "debug": true,
   "currentYear": "2022",
-  "currentMonth": "09",
+  "currentMonth": "10",
   "activeDatabaseName": "timeEntrysDb.json",
   "yearsSettings": {
     "2022": {
@@ -11,5 +11,11 @@
       "11": { "workDays": 20, "workHours": 160, "daysOff": 10 },
       "12": { "workDays": 21, "workHours": 168, "daysOff": 10 }
     }
-  }
+  },
+
+  "footer": [
+    "Kwota brutto:           16.200zł",
+    "Kwota netto:            21.200 zł",
+    "Dodatek za media + VAT: 172.00zł"
+  ]
 }

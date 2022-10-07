@@ -1,9 +1,27 @@
 import st from "./CalcMain.module.scss";
 import classnames from "classnames";
+import { useState, useEffect } from "react";
 
 const PrintableTimesTable = (props) => {
   const isWeekend = (entry) => {
     return ["Saturday", "Sunday"].includes(entry.day);
+  };
+
+  const [footer, setFooter] = useState();
+
+  useEffect(() => {
+    const loadData = async () => {
+      const responseSettings = await fetch("/api/worktimesheet/settings");
+      const settingsData = await responseSettings.json();
+      const footer = settingsData["footer"];
+      console.log(footer);
+      setFooter(footer);
+    };
+    loadData();
+  }, []);
+
+  const renderFooter = () => {
+    return footer.forEach((el) => <div>{el}</div>);
   };
 
   return (
@@ -38,13 +56,15 @@ const PrintableTimesTable = (props) => {
         </tbody>
       </table>
       <div>
-        <div>
+        <pre>
           Całkowity czas:{" "}
-          {props.tableData && props.tableData.currentMonthTotalHours}{" "}
-        </div>
-        <div>Kwota brutto: 0.00000</div>
-        <div>Kwota netto: 0.00000</div>
-        <div>Dodatek za media + VAT: 172.00</div>
+          {props.tableData && props.tableData.currentMonthTotalHours} <hr></hr>
+          {footer && footer.map((foot) => <div>{foot}</div>)}
+        </pre>
+
+        {/* <div>Kwota brutto: 0.00000</div> */}
+        {/* <div>Kwota netto: 0.00000</div> */}
+        {/* <div>Dodatek za media + VAT: 172.00</div> */}
       </div>
     </>
   );
