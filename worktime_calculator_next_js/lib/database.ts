@@ -1,31 +1,35 @@
 import { JsonDB } from "node-json-db";
 import { Config } from "node-json-db/dist/lib/JsonDBConfig";
 
-export const createConn = (name) => {
+type DbEntry = any;
+
+export const createConn = (name: string) => {
   const db = new JsonDB(new Config(name, true, false, "/"));
   return db;
 };
 
 // Abstraction
 export class JSONDatabase {
-  constructor(dbName) {
+  db: JsonDB;
+
+  constructor(dbName: string) {
     this.db = new JsonDB(new Config(dbName, true, true, "/"));
   }
 
-  async saveData(path, data) {
+  async saveData(path: string, data: DbEntry) {
     await this.db.push(path, data);
   }
 
-  async updateData(path, data) {
+  async updateData(path: string, data: DbEntry) {
     await this.db.push(path, data, false);
   }
 
-  async getData(path) {
+  async getData(path: string) {
     const data = await this.db.getData(path);
     return data;
   }
 
-  async delete(path) {
+  async delete(path: string) {
     this.db.delete(path);
   }
   async reload() {

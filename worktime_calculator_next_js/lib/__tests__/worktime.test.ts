@@ -17,7 +17,7 @@ describe("Sum to hour and minutes", () => {
     expect(sumHoursAndMinutes(myArray)).toEqual("8:00");
   });
   it("empty array", () => {
-    let myArray = [];
+    let myArray: string[] = [];
     expect(sumHoursAndMinutes(myArray)).toEqual("0:00");
   });
   it("zero item", () => {

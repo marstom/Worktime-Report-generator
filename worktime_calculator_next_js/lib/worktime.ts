@@ -1,17 +1,14 @@
-import { JSONDatabase } from "./database";
 import db from "./prodDb";
 
-export const addWorktimeEntry = (date) => {};
-
-export const splitDateToNumbers = (date) => {
+export const splitDateToNumbers = (date: string) => {
   const [year, month, day] = date.split("-").map((v) => Number(v));
   return { year, month, day };
 };
 
-export const sumHoursAndMinutes = (timeArray) => {
-  let hours = 0;
-  let minutes = 0;
-  const f = (n) => {
+export const sumHoursAndMinutes = (timeArray: Array<string>) => {
+  let hours: number = 0;
+  let minutes: number = 0;
+  const f = (n: number): string => {
     return n > 9 ? "" + n : "0" + n;
   };
 
@@ -22,7 +19,8 @@ export const sumHoursAndMinutes = (timeArray) => {
   }
 
   if (minutes > 59) {
-    hours += parseInt(minutes / 60);
+    /* @ts-ignore */
+    hours += parseInt(minutes / 60); /* @ts-ignore */
     minutes = parseInt(minutes % 60);
   }
   return hours + ":" + f(minutes);
@@ -33,29 +31,48 @@ export const getTimeEntryForDay = async () => {
   return JSON.stringify(data);
 };
 
-export const getTimeEntrysForDate = async (stringDate) => {
+export const getTimeEntrysForDate = async (stringDate: string) => {
   const data = await db.getData(`/years/${stringDate}`);
   return data;
 };
 
-const zeroPad = (num, places) => String(num).padStart(places, "0");
+const zeroPad = (num: number | string, places: number): string =>
+  String(num).padStart(places, "0");
+
+type EntryDay = {
+  time: string;
+  description: string;
+};
+// TODO move to commont types module
+type ValueData = {
+  id: string;
+  date: string;
+  descripton: string;
+  time: string;
+  isDayOff: boolean;
+  entrys: EntryDay[];
+};
 
 /*
 Per day entrys on api are here:
 http://localhost:3000/api/worktimesheet/monthly/2022/08
 */
-export const convertToApiContract = (perDayEntrys, month, year) => {
-  const totalHoursArray = [];
-  const res = {
+export const convertToApiContract = (
+  perDayEntrys: any,
+  month: string,
+  year: string,
+) => {
+  const totalHoursArray: Array<string> = [];
+  const res: any = {
     currentMonthTotalHours: "0:00",
     currentMonthExpectedHours: "0:00",
     expectedUntilNow: 0,
     currentMonth: [],
   };
 
-  Object.entries(perDayEntrys).forEach(([day, v], index) => {
+  Object.entries<ValueData>(perDayEntrys).forEach(([day, v], index: number) => {
     let totalAmountPerDay = "0:00";
-    let timesArray = [];
+    let timesArray: Array<string> = [];
     let data = {
       id: index + 1,
       isDayOff: v.isDayOff,
@@ -64,7 +81,7 @@ export const convertToApiContract = (perDayEntrys, month, year) => {
         new Date(`${year}-${month}-${day}`),
       ),
       total: totalAmountPerDay,
-      entrys: Object.entries(v.entrys).map((e) => {
+      entrys: Object.entries(v.entrys).map((e: any): any => {
         timesArray.push(e[1].time);
         return {
           id: e[0],

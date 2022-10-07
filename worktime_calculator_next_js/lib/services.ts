@@ -1,9 +1,25 @@
 import { writeEntryToDay, deleteEntry } from "./worktimeWriteModel";
 
 import prodDb from "./prodDb";
+import { JSONDatabase } from "./database";
+
+type RequestData = {
+  id: string;
+  date: string;
+  descripton: string;
+  time: string;
+  isDayOff: boolean;
+};
+
+type EntryData = {
+  id: string;
+  date: string;
+};
 
 export class SaveWorktimeEntryService {
-  constructor(database) {
+  database: JSONDatabase;
+
+  constructor(database?: JSONDatabase) {
     if (database) {
       this.database = database;
     } else {
@@ -11,11 +27,7 @@ export class SaveWorktimeEntryService {
     }
   }
 
-  // constructor(){
-  // this.database = prodDb;
-  // }
-
-  async saveWorktimeEntry(worktimeEntryRequestData) {
+  async saveWorktimeEntry(worktimeEntryRequestData: RequestData) {
     this.validateWorktimeEntry(worktimeEntryRequestData);
     await writeEntryToDay(
       this.database,
@@ -27,7 +39,7 @@ export class SaveWorktimeEntryService {
     );
   }
 
-  async deleteWorktimeEntity(entryData) {
+  async deleteWorktimeEntity(entryData: EntryData) {
     console.log("----entity data-------------------------");
     console.log(entryData);
     console.log(entryData.id);
@@ -35,5 +47,5 @@ export class SaveWorktimeEntryService {
     await deleteEntry(this.database, entryData.date, entryData.id);
   }
 
-  validateWorktimeEntry(entryData) {}
+  validateWorktimeEntry(entryData: EntryData) {}
 }
