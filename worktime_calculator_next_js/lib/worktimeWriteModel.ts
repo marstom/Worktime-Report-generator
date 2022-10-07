@@ -1,13 +1,16 @@
-const zeroPad = (num, places) => String(num).padStart(places, "0");
+import { JSONDatabase } from "./database";
+
+const zeroPad = (num: number, places: number) =>
+  String(num).padStart(places, "0");
 
 // aggregate candidat
 export const writeEntryToDay = async (
-  database,
-  id,
-  date,
-  description,
-  time,
-  isDayOff,
+  database: JSONDatabase,
+  id: string,
+  date: string,
+  description: string,
+  time: string,
+  isDayOff: boolean,
 ) => {
   const [year, month, day] = date.split("-");
   const saveToDayPath = `/years/${year}/${month}/${parseInt(day)}`;
@@ -19,7 +22,11 @@ export const writeEntryToDay = async (
   await database.updateData(saveToDayPath + entryPath, { description, time });
 };
 
-export const deleteEntry = async (database, date, id) => {
+export const deleteEntry = async (
+  database: JSONDatabase,
+  date: string,
+  id: string,
+) => {
   const [year, month, day] = date.split("-");
   const dayPath = `/years/${year}/${month}/${parseInt(day)}`;
   const entryPath = `${dayPath}/entrys/${id}`;
@@ -28,7 +35,11 @@ export const deleteEntry = async (database, date, id) => {
 };
 
 // TODO where call it? Custom command?
-export const initializeNewMonth = async (database, year, month) => {
+export const initializeNewMonth = async (
+  database: JSONDatabase,
+  year: string,
+  month: string,
+) => {
   for (let i = 0; i < new Date(year, month, 0).getDate(); i++) {
     const saveToDayPath = `/years/${year}/${month}/${parseInt(i)}`;
     await database.saveData(saveToDayPath, { description: "", time: "00:00" });
