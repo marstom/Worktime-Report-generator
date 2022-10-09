@@ -81,6 +81,10 @@ Implement auth usin iron session!
   - [ ] billing wyświetla się na printable version
 
 - [ ] Dodać github actions - automatyczne testy
+- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
+- [ ] Floating form, table is beside [] [.]
+- [ ] Można wybrać aktywną baze danych z opcji zamiast hardkodować
+- [ ] Zamiaste edytować vim'em na serwerze settings.json jakiś interfejs do manipulacji opcjami
 
 ### FUTURE:
 
@@ -96,7 +100,7 @@ Implement auth usin iron session!
 
 - [ ] can send undefined time!
 
-## SP 06 WIP
+## SP 06 start 09.10.2022-end
 
 - [ ] Przejdź na TypeScript ! Quality 📈
 
@@ -105,16 +109,15 @@ Implement auth usin iron session!
   - [ ] Przepisać komponenty
 
 - [ ] Instalacja tego ustrojstwa na moim serwerze OVH
-- [ ] po otwarciu strony data jest od razu ustawiona na dzisiejszą
-- [ ] Floating form, table is beside [] [.]
+- [x] mvp billing- move vimem edytować na serwerze settings.json!
 
 ## SP 05 start- 17.09.2022
 
-- [ ] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
+- [x] Uwieżytelnianie, żebym tylko ja mógł tam wejść, albo vpn? Jak?
   - [x] Uwieżytelniam się po iron-session
   - [x] Spike, 1 chroniony endpoint
-  - [ ] Zabezpiecz api endpointy
-  - [ ] Zabezpiecz strony
+  - [x] Zabezpiecz api endpointy
+  - [x] Zabezpiecz strony
 - [x] instalacja typescripta
 - [x] Wyliczenie `expected until now`
 - [x] Autoinkrementacja id albo UUID
