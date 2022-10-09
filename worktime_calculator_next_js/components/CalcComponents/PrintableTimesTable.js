@@ -61,10 +61,6 @@ const PrintableTimesTable = (props) => {
           {props.tableData && props.tableData.currentMonthTotalHours} <hr></hr>
           {footer && footer.map((foot) => <div>{foot}</div>)}
         </pre>
-
-        {/* <div>Kwota brutto: 0.00000</div> */}
-        {/* <div>Kwota netto: 0.00000</div> */}
-        {/* <div>Dodatek za media + VAT: 172.00</div> */}
       </div>
     </>
   );

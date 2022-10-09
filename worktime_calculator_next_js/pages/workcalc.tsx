@@ -21,10 +21,7 @@ const HoursCalc: React.FC<Props> = (props) => {
 
   return (
     <CalcLayout>
-      <CalcMain
-        calcInitialData={props.fromApi}
-        timeEntryExample={props.timeEntryExample}
-      />
+      <CalcMain />
     </CalcLayout>
   );
 };

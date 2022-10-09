@@ -8,8 +8,11 @@ const HoursCalc = (props) => {
   useEffect(() => {
     const loadData = async () => {
       console.log("fethcing months ....");
-      //TODO pass year/month from settings, not hardcode, settings exisis, settings endpoint should give us this!
-      const response = await fetch("/api/worktimesheet/monthly/2022/09");
+      const responseSettings = await fetch("/api/worktimesheet/settings");
+      const settingsJson = await responseSettings.json();
+      const response = await fetch(
+        `/api/worktimesheet/monthly/${settingsJson.currentYear}/${settingsJson.currentMonth}`,
+      );
       const data = await response.json();
       setTableData(data);
     };
@@ -18,10 +21,6 @@ const HoursCalc = (props) => {
 
   return (
     <>
-      {/* <CalcMain */}
-      {/* calcInitialData={props.fromApi} */}
-      {/* timeEntryExample={props.timeEntryExample} */}
-      {/* /> */}
       <PrintableTimesTable tableData={tableData}></PrintableTimesTable>
     </>
   );
