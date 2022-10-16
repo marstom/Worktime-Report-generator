@@ -5,11 +5,13 @@ Repo: https://github.com/marstom/Worktime-report-generator
 ## Project setup
 
 1. Create .env.local & .env.prod with secrets, separate for prod & local
+   For unittests create .env.test.local
 
 ```
 SECRET_COOKIE_PASSWORD=XXX
 USER_PASSWORD=XXX
 ONLY_USERNAME_AVAILABLE=XXX
+JSON_DB="./lib/db/timeEntrysDb.json"
 ```
 
 2. install deps `yarn`
@@ -17,12 +19,14 @@ ONLY_USERNAME_AVAILABLE=XXX
 4. Create empty database here `lib/db/timeEntrysDb.json`
 
 ```json
-
 {
-    "years": {
-        "2022": {
-          "01": {}
-        }
+  "years": {
+    "2022": {
+      "08": {
+        "14": {}
+      }
+    }
+  }
 }
 ```
 
