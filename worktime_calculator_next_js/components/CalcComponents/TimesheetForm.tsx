@@ -1,28 +1,35 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import st from "./CalcMain.module.scss";
+import { FormDataFromEntryType, TableResponseType } from "./types";
 
-const TimesheetForm = (props) => {
-  const [id, setId] = useState();
-  const [date, setDate] = useState();
-  const [descripton, setDescription] = useState();
-  const [timeHh, setTimeHh] = useState();
-  const [timeMm, setTimeMm] = useState();
-  const [isDayOff, setIsDayOff] = useState();
+type Props = {
+  setIdForm(id: string | undefined): void;
+  setTableResponse(tableResponse: TableResponseType): void;
+  formDataFromEntry: FormDataFromEntryType;
+};
 
-  const idRef = useRef();
-  const dateRef = useRef();
-  const descriptionRef = useRef();
-  const mmRef = useRef();
-  const hhRef = useRef();
-  const isDayOffRef = useRef();
+const TimesheetForm: React.FC<Props> = (props) => {
+  const [id, setId] = useState<string>();
+  const [date, setDate] = useState<string>();
+  const [descripton, setDescription] = useState<string>();
+  const [timeHh, setTimeHh] = useState<string>();
+  const [timeMm, setTimeMm] = useState<string>();
+  const [isDayOff, setIsDayOff] = useState<boolean>();
 
-  const changeDateAction = (date) => {
+  const idRef = useRef<HTMLInputElement>(null);
+  const dateRef = useRef<HTMLInputElement>(null);
+  const descriptionRef = useRef<HTMLTextAreaElement>(null);
+  const mmRef = useRef<HTMLInputElement>(null);
+  const hhRef = useRef<HTMLInputElement>(null);
+  const isDayOffRef = useRef<HTMLInputElement>(null);
+
+  const changeDateAction = (date: string): void => {
     setDate(date);
     console.log("date:", date);
     const uid = uuidv4();
-    idRef.current.value = uid;
+    idRef!.current!.value = uid;
     setId(uid);
   };
 
@@ -35,12 +42,12 @@ const TimesheetForm = (props) => {
     // console.log(props.formDataFromEntry['id'])
     setId(props.formDataFromEntry ? props.formDataFromEntry.id : "");
     setDate(
-      (dateRef.current.value = props.formDataFromEntry
+      (dateRef!.current!.value = props.formDataFromEntry
         ? props.formDataFromEntry.date
         : ""),
     );
     setDescription(
-      (descriptionRef.current.value = props.formDataFromEntry
+      (descriptionRef!.current!.value = props.formDataFromEntry
         ? props.formDataFromEntry.description
         : ""),
     );
@@ -53,17 +60,17 @@ const TimesheetForm = (props) => {
       props.formDataFromEntry ? props.formDataFromEntry.isDayOff : "",
     );
 
-    idRef.current.value = props.formDataFromEntry
+    idRef!.current!.value = props.formDataFromEntry
       ? props.formDataFromEntry.id
       : "";
-    dateRef.current.value = props.formDataFromEntry
+    dateRef!.current!.value = props.formDataFromEntry
       ? props.formDataFromEntry.date
       : "";
-    descriptionRef.current.value = props.formDataFromEntry
+    descriptionRef!.current!.value = props.formDataFromEntry
       ? props.formDataFromEntry.description
       : "";
-    mmRef.current.value = mm;
-    hhRef.current.value = hh;
+    mmRef!.current!.value = mm;
+    hhRef!.current!.value = hh;
     isDayOffRef.current.checked = props.formDataFromEntry
       ? props.formDataFromEntry.isDayOff
       : "";
@@ -84,7 +91,7 @@ const TimesheetForm = (props) => {
 
   const newEntryClick = async () => {
     const uid = uuidv4();
-    idRef.current.value = uid;
+    idRef!.current!.value = uid;
     setId(uid);
   };
 

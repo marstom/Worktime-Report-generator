@@ -44,6 +44,10 @@ Ended [here](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
 [Dynamic routes](https://nextjs.org/learn/basics/dynamic-routes)
 [Dynamic routes details](https://nextjs.org/learn/basics/dynamic-routes/dynamic-routes-details)
 
+## Knowloge
+
+- [How to use .! in ts?](https://blog.logrocket.com/understanding-exclamation-mark-typescript/)
+
 ## Calc js projekt
 
 [bazka danyn na json oparta](https://www.npmjs.com/package/node-json-db)
@@ -85,6 +89,7 @@ Implement auth usin iron session!
 - [ ] Floating form, table is beside [] [.]
 - [ ] Można wybrać aktywną baze danych z opcji zamiast hardkodować
 - [ ] Zamiaste edytować vim'em na serwerze settings.json jakiś interfejs do manipulacji opcjami
+- [ ] Opcje wydruku fontsize etc.
 
 ### FUTURE:
 
