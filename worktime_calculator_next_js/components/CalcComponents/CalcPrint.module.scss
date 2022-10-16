@@ -1,0 +1,110 @@
+.main_content {
+  // margin-left: 10%;
+  width: 100%;
+}
+
+.form_container {
+  color: brown;
+  width: 50%;
+
+  // centered conteiner
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 5px;
+  background-color: #ffedc7;
+  padding: 20px;
+  #time {
+    width: 3.1em;
+    color: blue;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type="button"] {
+    background-color: rgb(255, 245, 211);
+    border-radius: 5px;
+    padding: 8px;
+  }
+
+  input[type="button"].delete {
+    background-color: rgb(252, 149, 131);
+    border-radius: 5px;
+    padding: 8px;
+  }
+}
+
+.table {
+  min-width: 60%;
+  table {
+    border-collapse: collapse;
+    width: 150%;
+  }
+
+  td,
+  th {
+    font-family: monospace;
+    font-size: 10px;
+    border-collapse: collapse;
+    border: 0.5px solid #000000;
+    text-align: left;
+    padding: 8px;
+  }
+
+  .row:hover {
+    background-color: aliceblue;
+  }
+
+  .row_gray {
+    background-color: gray;
+  }
+  .row_red {
+    background-color: rgb(97, 195, 218);
+  }
+
+  td:hover {
+    background-color: lightblue;
+  }
+  td:active {
+    background-color: rgb(255, 225, 156);
+  }
+  .info {
+    color: gray;
+    font-size: 60%;
+    text-align: center;
+  }
+}
+
+.col_25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col_75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.primary {
+  background-color: rgb(255, 245, 211);
+  border-radius: 5px;
+  padding: 8px;
+}

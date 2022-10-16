@@ -1,4 +1,4 @@
-import st from "./CalcMain.module.scss";
+import st from "./CalcPrint.module.scss";
 import classnames from "classnames";
 import { useState, useEffect } from "react";
 
@@ -26,35 +26,37 @@ const PrintableTimesTable = (props) => {
 
   return (
     <>
-      <table className={st.table} cellSpacing="0" border={1}>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Time</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.tableData &&
-            props.tableData.currentMonth.map((day) => {
-              return day.entrys.map((entry, index) => (
-                <tr
-                  key={`${day.id} ${entry.id}`}
-                  className={classnames({
-                    [st.row]: true,
-                    [st.row_gray]: isWeekend(day) | (day.isDayOff === true),
-                  })}
-                >
-                  <td>{index === 0 ? day.date : ""}</td>
-                  <td>{entry.description}</td>
-                  <td>{entry.time}</td>
-                  <td>{index === 0 ? day.total : ""}</td>
-                </tr>
-              ));
-            })}
-        </tbody>
-      </table>
+      <div className={st.main_content}>
+        <table className={st.table} cellSpacing="0" border={1}>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Time</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {props.tableData &&
+              props.tableData.currentMonth.map((day) => {
+                return day.entrys.map((entry, index) => (
+                  <tr
+                    key={`${day.id} ${entry.id}`}
+                    className={classnames({
+                      [st.row]: true,
+                      [st.row_gray]: isWeekend(day) | (day.isDayOff === true),
+                    })}
+                  >
+                    <td>{index === 0 ? day.date : ""}</td>
+                    <td>{entry.description}</td>
+                    <td>{entry.time}</td>
+                    <td>{index === 0 ? day.total : ""}</td>
+                  </tr>
+                ));
+              })}
+          </tbody>
+        </table>
+      </div>
       <div>
         <pre>
           Całkowity czas:{" "}
