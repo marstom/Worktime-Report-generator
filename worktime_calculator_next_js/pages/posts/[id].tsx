@@ -4,7 +4,12 @@ import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 
-const Post = ({ postData }) => {
+export type PostDataType = Array<{ [id: string]: string }>;
+type Props = {
+  postData: PostDataType;
+};
+
+const Post: React.FC<Props> = ({ postData }) => {
   return (
     <Layout>
       <Head>

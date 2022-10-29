@@ -7,7 +7,12 @@ import Link from "next/link";
 const name = "Tommar";
 export const siteTitle = "Tomms Blog";
 
-export default function Layout({ children, home }) {
+type Props = {
+  children: any;
+  home: any;
+};
+
+const Layout: React.FC<Props> = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -72,4 +77,6 @@ export default function Layout({ children, home }) {
       )}
     </div>
   );
-}
+};
+
+export default Layout;

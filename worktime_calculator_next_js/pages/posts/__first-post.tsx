@@ -4,7 +4,9 @@ import Head from "next/head";
 import Script from "next/script";
 import Layout from "../../components/layout";
 
-export default () => {
+type Props = {};
+
+const FirstPost: React.FC<Props> = () => {
   return (
     <Layout>
       <Head>
@@ -30,3 +32,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default FirstPost;

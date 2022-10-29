@@ -1,7 +1,12 @@
 import styles from "./alert.module.css";
 import cn from "classnames";
 
-export default function Alert({ children, type }) {
+type Props = {
+  children: any;
+  type: any;
+};
+
+const Alert: React.FC<Props> = ({ children, type }) => {
   return (
     <div
       className={cn({
@@ -12,4 +17,6 @@ export default function Alert({ children, type }) {
       {children}
     </div>
   );
-}
+};
+
+export default Alert;

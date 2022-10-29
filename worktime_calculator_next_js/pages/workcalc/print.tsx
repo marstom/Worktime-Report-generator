@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import PrintableTimesTable from "../../components/CalcComponents/PrintableTimesTable";
 
-const HoursCalc = (props) => {
+type Props = {
+  fromApi: object;
+  timeEntryExample: object;
+};
+
+const HoursCalc: React.FC<Props> = (props) => {
   const [tableData, setTableData] = useState();
   const [tableResponse, setTableResponse] = useState(); // TODO invistigate if any better communication between components solution exists - state management?
 
