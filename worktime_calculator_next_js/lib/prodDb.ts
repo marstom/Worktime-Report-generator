@@ -1,6 +1,6 @@
 import { JSONDatabase } from "./database";
 
-let db;
+let db: JSONDatabase;
 
 if (process.env.JSON_DB) {
   db = new JSONDatabase(process.env.JSON_DB);

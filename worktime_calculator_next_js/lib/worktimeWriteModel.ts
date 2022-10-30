@@ -1,6 +1,6 @@
 import { JSONDatabase } from "./database";
 
-const zeroPad = (num: number, places: number) =>
+const zeroPad = (num: number | string, places: number) =>
   String(num).padStart(places, "0");
 
 // aggregate candidat
@@ -37,10 +37,11 @@ export const deleteEntry = async (
 // TODO where call it? Custom command?
 export const initializeNewMonth = async (
   database: JSONDatabase,
-  year: string,
-  month: string,
+  year: number,
+  month: number,
 ) => {
   for (let i = 0; i < new Date(year, month, 0).getDate(); i++) {
+    // @ts-ignore
     const saveToDayPath = `/years/${year}/${month}/${parseInt(i)}`;
     await database.saveData(saveToDayPath, { description: "", time: "00:00" });
   }

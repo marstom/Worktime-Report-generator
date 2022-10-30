@@ -5,6 +5,7 @@ import { unauthorized } from "lib/auth";
 import { withIronSessionApiRoute } from "iron-session/next";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
+  // @ts-ignore
   if (unauthorized(req.session.user, res)) {
     return;
   }

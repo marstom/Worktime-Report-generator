@@ -18,11 +18,14 @@ type SettingsData = {
 const CalcMain: React.FC<Props> = (props) => {
   const [tableData, setTableData] = useState<TableDataType>();
   const [settingsData, setSettingsData] = useState<SettingsData>();
-  const [tableResponse, setTableResponse] = useState<TableResponseType>();
-  const [formDataFromEntry, setFormDataFromEntry] =
-    useState<FormDataFromEntryType>();
+  const [tableResponse, setTableResponse] = useState<
+    TableResponseType | undefined
+  >();
+  const [formDataFromEntry, setFormDataFromEntry] = useState<
+    FormDataFromEntryType | undefined
+  >();
 
-  const [idForm, setIdForm] = useState<number>();
+  const [idForm, setIdForm] = useState<string | undefined>();
   const [idTable, setIdTable] = useState<number>();
   useEffect(() => {
     const loadData = async () => {

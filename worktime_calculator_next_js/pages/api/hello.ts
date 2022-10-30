@@ -5,6 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 //  http.ServerResponse
 async function handler(req: NextApiRequest, res: NextApiResponse) {
+  // @ts-ignore
   if (unauthorized(req.session.user, res)) {
     return;
   }

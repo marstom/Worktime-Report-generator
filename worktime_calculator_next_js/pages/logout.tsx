@@ -7,6 +7,7 @@ import { useEffect } from "react";
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const Logout = () => {
+  // @ts-ignore
   useEffect(async () => {
     const logout = async () => {
       const res = await fetch("/api/logout");

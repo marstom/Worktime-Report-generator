@@ -4,6 +4,7 @@ import { unauthorized } from "lib/auth";
 import { NextApiRequest, NextApiResponse } from "next";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
+  // @ts-ignore
   if (unauthorized(req.session.user, res)) {
     return;
   }

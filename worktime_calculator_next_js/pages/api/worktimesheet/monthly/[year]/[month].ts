@@ -5,6 +5,7 @@ import { withIronSessionApiRoute } from "iron-session/next";
 import { unauthorized } from "lib/auth";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
+  // @ts-ignore
   if (unauthorized(req.session.user, res)) {
     return;
   }
@@ -15,6 +16,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   const rawJSONDatabaseData = await getTimeEntrysForDate(date);
   const response: any = convertToApiContract(
     rawJSONDatabaseData,
+    // @ts-ignore
     query.month,
     query.year,
   );

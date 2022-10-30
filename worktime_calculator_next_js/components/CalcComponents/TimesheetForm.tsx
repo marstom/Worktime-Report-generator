@@ -6,8 +6,10 @@ import { FormDataFromEntryType, TableResponseType } from "./types";
 
 type Props = {
   setIdForm(id: string | undefined): void;
-  setTableResponse(tableResponse: TableResponseType): void;
-  formDataFromEntry: FormDataFromEntryType;
+  setTableResponse(tableResponse: TableResponseType | undefined): void;
+  formDataFromEntry: FormDataFromEntryType | undefined;
+  tableResponse: TableResponseType | undefined;
+  idForm: string | undefined;
 };
 
 const TimesheetForm: React.FC<Props> = (props) => {
@@ -57,6 +59,7 @@ const TimesheetForm: React.FC<Props> = (props) => {
     setTimeMm(mm);
     setTimeHh(hh);
     setIsDayOff(
+      // @ts-ignore
       props.formDataFromEntry ? props.formDataFromEntry.isDayOff : "",
     );
 
@@ -71,10 +74,10 @@ const TimesheetForm: React.FC<Props> = (props) => {
       : "";
     mmRef!.current!.value = mm;
     hhRef!.current!.value = hh;
+    // @ts-ignore
     isDayOffRef.current.checked = props.formDataFromEntry
       ? props.formDataFromEntry.isDayOff
       : "";
-    // props.setIdForm(id);
   }, [props.formDataFromEntry]);
 
   const addModifyClick = async () => {
@@ -188,7 +191,7 @@ const TimesheetForm: React.FC<Props> = (props) => {
             ></input>
             <input
               ref={isDayOffRef}
-              type="checkbox"
+              type="checkbox" // @ts-ignore
               onClick={(e) => setIsDayOff(e.target.checked)}
             ></input>
           </div>

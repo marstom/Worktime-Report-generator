@@ -47,6 +47,7 @@ export default function Home({ allPostsData }: PostDataType) {
 
               <br />
               <small className={utilStyles.lightText}>
+                {/* @ts-ignore */}
                 <Date dateString={date} />
               </small>
             </li>

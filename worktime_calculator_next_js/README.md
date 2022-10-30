@@ -8,7 +8,7 @@ Repo: https://github.com/marstom/Worktime-report-generator
    For unittests create .env.test.local
 
 ```
-SECRET_COOKIE_PASSWORD=XXX
+SECRET_COOKIE_PASSWORD=XXX<32 chars>
 USER_PASSWORD=XXX
 ONLY_USERNAME_AVAILABLE=XXX
 JSON_DB="./lib/db/timeEntrysDb.json"
@@ -41,6 +41,10 @@ modify settings.json
 ```
 
 ```
+
+Deploy:
+
+note: workcalc deploy
 
 ## Tutorial
 
@@ -111,14 +115,15 @@ Implement auth usin iron session!
 
 ## SP 06 start 09.10.2022-end
 
-- [ ] Przejdź na TypeScript ! Quality 📈
+- [x] Przejdź na TypeScript ! Quality 📈
 
   - [x] Przepisać LIB
   - [x] Przepisać testy
-  - [ ] Przepisać komponenty
+  - [x] Przepisać komponenty
 
 - [ ] Instalacja tego ustrojstwa na moim serwerze OVH
 - [x] mvp billing- move vimem edytować na serwerze settings.json!
+- [ ] maskowane pole password
 
 ## SP 05 start- 17.09.2022
 

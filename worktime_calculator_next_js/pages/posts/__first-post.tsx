@@ -8,6 +8,7 @@ type Props = {};
 
 const FirstPost: React.FC<Props> = () => {
   return (
+    // @ts-ignore
     <Layout>
       <Head>
         <title>First post</title>

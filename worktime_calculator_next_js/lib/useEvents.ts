@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import type { User } from "../pages/api/auth/user";
+import { User } from "pages/api/user";
 import type { Events } from "../pages/api/events";
 
 export default function useEvents(user: User | undefined) {
