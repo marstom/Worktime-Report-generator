@@ -108,6 +108,7 @@ Implement auth usin iron session!
 
 - [ ] wyświetlam od razu całą tabelke - dni nieuzupełnione na czerwono
 - [ ] refactor, niech struktura db odpowiada api żeby było najprościej
+- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
 
 ### BUGI:
 
@@ -121,9 +122,9 @@ Implement auth usin iron session!
   - [x] Przepisać testy
   - [x] Przepisać komponenty
 
-- [ ] Instalacja tego ustrojstwa na moim serwerze OVH
 - [x] mvp billing- move vimem edytować na serwerze settings.json!
-- [ ] maskowane pole password
+- [x] maskowane pole password
+- [x] dockerize!! 📦
 
 ## SP 05 start- 17.09.2022
 

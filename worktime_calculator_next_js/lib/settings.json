@@ -14,8 +14,8 @@
   },
 
   "footer": [
-    "Kwota brutto:           16.200zł",
-    "Kwota netto:            21.200 zł",
-    "Dodatek za media + VAT: 172.00zł"
+    "line1                         11 zł",
+    "line2                         12 zł",
+    "line3                         13 zł"
   ]
 }
