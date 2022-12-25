@@ -35,12 +35,6 @@
     border-radius: 5px;
     padding: 8px;
   }
-
-  input[type="button"].delete {
-    background-color: rgb(252, 149, 131);
-    border-radius: 5px;
-    padding: 8px;
-  }
 }
 
 .table {
@@ -82,11 +76,43 @@
     text-align: center;
   }
 }
-
 .col_25 {
   float: left;
   width: 25%;
   margin-top: 6px;
+}
+
+.grid_area {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "a b c"
+    "d e f"
+    "g h i";
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gr_add_modify {
+  grid-area: b;
+}
+
+input[type="button"].gr_new_hash {
+  grid-area: a;
+  background-color: rgb(229, 220, 220);
+  border-color: gray;
+}
+
+input[type="button"].gr_delete {
+  grid-area: d;
+  background-color: rgb(255, 147, 129);
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.gr_is_day_off_radio {
+  grid-area: c;
+  // align-self: center;
 }
 
 .col_75 {

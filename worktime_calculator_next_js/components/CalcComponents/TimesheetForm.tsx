@@ -172,28 +172,35 @@ const TimesheetForm: React.FC<Props> = (props) => {
         </div>
 
         <div className={st.row}>
-          <div className={st.col_25}>
+          <div className={st.grid_area}>
             <input
               onClick={addModifyClick}
               type="button"
               value="Add / Modify"
+              className={st.gr_add_modify}
             ></input>
             <input
               onClick={newEntryClick}
               type="button"
               value="New hash"
+              className={st.gr_new_hash}
             ></input>
             <input
               onClick={deleteClick}
               type="button"
-              className={st.delete}
               value="Delete"
+              className={st.gr_delete}
             ></input>
-            <input
-              ref={isDayOffRef}
-              type="checkbox" // @ts-ignore
-              onClick={(e) => setIsDayOff(e.target.checked)}
-            ></input>
+
+            <div className={st.gr_is_day_off_radio}>
+              <input
+                id="is_day_off"
+                ref={isDayOffRef}
+                type="checkbox" // @ts-ignore
+                onClick={(e) => setIsDayOff(e.target.checked)}
+              />
+              <label htmlFor="is_day_off">Is day off?</label>
+            </div>
           </div>
         </div>
       </div>
