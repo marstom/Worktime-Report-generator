@@ -161,12 +161,14 @@ const TimesheetForm: React.FC<Props> = (props) => {
               onChange={(e) => setTimeHh(e.target.value)}
               type="text"
               id={st.time}
+              data-testid="hour-input"
             ></input>
             <input
               ref={mmRef}
               onChange={(e) => setTimeMm(e.target.value)}
               type="text"
               id={st.time}
+              data-testid="minute-input"
             ></input>
           </div>
         </div>
@@ -178,6 +180,7 @@ const TimesheetForm: React.FC<Props> = (props) => {
               type="button"
               value="Add / Modify"
               className={st.gr_add_modify}
+              data-testid="add-button"
             ></input>
             <input
               onClick={newEntryClick}
@@ -190,6 +193,7 @@ const TimesheetForm: React.FC<Props> = (props) => {
               type="button"
               value="Delete"
               className={st.gr_delete}
+              data-testid="delete-button"
             ></input>
 
             <div className={st.gr_is_day_off_radio}>
@@ -198,6 +202,7 @@ const TimesheetForm: React.FC<Props> = (props) => {
                 ref={isDayOffRef}
                 type="checkbox" // @ts-ignore
                 onClick={(e) => setIsDayOff(e.target.checked)}
+                data-testid="is-day-off-radio"
               />
               <label htmlFor="is_day_off">Is day off?</label>
             </div>
