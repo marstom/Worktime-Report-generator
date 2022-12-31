@@ -25,8 +25,16 @@ export class JSONDatabase {
   }
 
   async getData(path: string) {
-    const data = await this.db.getData(path);
-    return data;
+    try {
+      const data = await this.db.getData(path);
+      return data;
+    } catch (error) {
+      console.log("The data was empty, created new one entry...");
+      console.log(error);
+      const data = {};
+      return data;
+    }
+    // return data;
   }
 
   async delete(path: string) {
