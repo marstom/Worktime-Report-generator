@@ -232,6 +232,5 @@ describe("I can calculate time until now", () => {
     let r = moment().startOf("month").fromNow();
     console.log(r);
     console.log(moment().daysInMonth());
-    // console.log(moment().)
   });
 });

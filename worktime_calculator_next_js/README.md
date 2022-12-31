@@ -52,6 +52,8 @@ Ended [here](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
 [Dynamic routes](https://nextjs.org/learn/basics/dynamic-routes)
 [Dynamic routes details](https://nextjs.org/learn/basics/dynamic-routes/dynamic-routes-details)
 
+[How to avoid async top level in my solution?](https://stackoverflow.com/questions/49798540/how-to-export-a-variable-that-takes-its-value-from-an-async-function)
+
 ## Knowloge
 
 - [How to use .! in ts?](https://blog.logrocket.com/understanding-exclamation-mark-typescript/)

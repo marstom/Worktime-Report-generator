@@ -2,7 +2,7 @@
   "debug": true,
   "currentYear": "2023",
   "currentMonth": "01",
-  "activeDatabaseName": "FUTURE_WILL_BE_ACTIVE.json",
+  "activeDatabaseName": "./lib/db/FROM_settigs.json",
   "yearsSettings": {
     "2022": {
       "01": { "workDays": 0, "workHours": 0, "daysOff": 0 },
