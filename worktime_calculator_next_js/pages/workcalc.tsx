@@ -1,6 +1,7 @@
 import CalcLayout from "../components/CalcComponents/calcLayout";
 import CalcMain from "../components/CalcComponents/CalcMain";
 import useUser from "lib/useUser";
+import initializeDatabase from "lib/prodDb";
 
 // import {getSortedPostsData } from "../lib/posts"
 import { getTimeEntryForDay } from "../lib/worktime";
@@ -27,7 +28,8 @@ const HoursCalc: React.FC<Props> = (props) => {
 };
 
 export async function getStaticProps() {
-  const data = await getTimeEntryForDay();
+  const db = await initializeDatabase();
+  const data = await getTimeEntryForDay(db);
   return {
     props: { fromApi: { testData: "test" }, timeEntryExample: data },
   };

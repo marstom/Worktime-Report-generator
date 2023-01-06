@@ -1,6 +1,4 @@
 import { writeEntryToDay, deleteEntry } from "./worktimeWriteModel";
-
-import prodDb from "./prodDb";
 import { JSONDatabase } from "./database";
 
 type RequestData = {
@@ -19,12 +17,8 @@ type EntryData = {
 export class SaveWorktimeEntryService {
   database: JSONDatabase;
 
-  constructor(database?: JSONDatabase) {
-    if (database) {
-      this.database = database;
-    } else {
-      this.database = prodDb;
-    }
+  constructor(database: JSONDatabase) {
+    this.database = database;
   }
 
   async saveWorktimeEntry(worktimeEntryRequestData: RequestData) {

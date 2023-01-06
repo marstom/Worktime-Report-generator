@@ -22,7 +22,9 @@ describe("web page tommar opens", () => {
   });
 
   it("goto calc, pick todays date and save item!", () => {
+    // Given I login
     cy.visit("http://localhost:3000/login");
+    // When fill all form
     cy.get("input[name=username]").type(Cypress.env("username"));
     cy.get("input[name=password]").type(Cypress.env("password"));
     cy.get("button").contains("Login").click();
@@ -37,6 +39,9 @@ describe("web page tommar opens", () => {
 
     cy.get('[data-testid="minute-input"]').type(20);
     cy.get('[data-testid="hour-input"]').type(1);
+    // And click add item button
     cy.get('[data-testid="add-button"]').click();
+
+    // Then I have a new item on worksheet
   });
 });

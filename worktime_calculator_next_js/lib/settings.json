@@ -1,15 +1,36 @@
 {
   "debug": true,
-  "currentYear": "2022",
-  "currentMonth": "12",
-  "activeDatabaseName": "timeEntrysDb.json",
+  "currentYear": "2023",
+  "currentMonth": "01",
+  "activeDatabaseName": "./lib/db/FROM_settigs.json",
   "yearsSettings": {
     "2022": {
+      "01": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "02": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "03": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "04": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "05": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "06": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "07": { "workDays": 0, "workHours": 0, "daysOff": 0 },
       "08": { "workDays": 22, "workHours": 176, "daysOff": 9 },
       "09": { "workDays": 22, "workHours": 176, "daysOff": 8 },
       "10": { "workDays": 21, "workHours": 168, "daysOff": 10 },
       "11": { "workDays": 20, "workHours": 160, "daysOff": 10 },
       "12": { "workDays": 21, "workHours": 168, "daysOff": 10 }
+    },
+    "2023": {
+      "01": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "02": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "03": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "04": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "05": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "06": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "07": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "08": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "09": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "10": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "11": { "workDays": 0, "workHours": 0, "daysOff": 0 },
+      "12": { "workDays": 0, "workHours": 0, "daysOff": 0 }
     }
   },
 

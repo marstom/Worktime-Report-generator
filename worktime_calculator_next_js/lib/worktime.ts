@@ -1,4 +1,4 @@
-import db from "./prodDb";
+import { JSONDatabase } from "./database";
 
 export const splitDateToNumbers = (date: string) => {
   const [year, month, day] = date.split("-").map((v) => Number(v));
@@ -26,12 +26,16 @@ export const sumHoursAndMinutes = (timeArray: Array<string>) => {
   return hours + ":" + f(minutes);
 };
 
-export const getTimeEntryForDay = async () => {
+// TODO refactor pass DB as parameter!!
+export const getTimeEntryForDay = async (db: JSONDatabase) => {
   const data = await db.getData("/years/2022/08/14");
   return JSON.stringify(data);
 };
 
-export const getTimeEntrysForDate = async (stringDate: string) => {
+export const getTimeEntrysForDate = async (
+  db: JSONDatabase,
+  stringDate: string,
+) => {
   const data = await db.getData(`/years/${stringDate}`);
   return data;
 };
