@@ -1,13 +1,16 @@
 import st from "./CalcPrint.module.scss";
 import classnames from "classnames";
 import { useState, useEffect } from "react";
+import { MonthType } from "./types";
 
-const PrintableTimesTable = (props) => {
-  const isWeekend = (entry) => {
+type Props = {};
+
+const PrintableTimesTable: React.FC<Props> = (props) => {
+  const isWeekend = (entry: MonthType) => {
     return ["Saturday", "Sunday"].includes(entry.day);
   };
 
-  const [footer, setFooter] = useState();
+  const [footer, setFooter] = useState<Array<any>>([]);
 
   useEffect(() => {
     const loadData = async () => {

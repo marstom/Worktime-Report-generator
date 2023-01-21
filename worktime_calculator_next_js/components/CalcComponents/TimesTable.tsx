@@ -3,20 +3,18 @@ import classnames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { MonthType } from "./types";
 
-const TimesTable = (props) => {
+type Props = {};
+const TimesTable: React.FC<Props> = (props) => {
   const router = useRouter();
 
   useEffect(() => {
     console.log("Table has been loaded........");
   }, []);
 
-  const isWeekend = (entry) => {
+  const isWeekend = (entry: MonthType) => {
     return ["Saturday", "Sunday"].includes(entry.day);
-  };
-
-  const isDayOff = (entry) => {
-    return entry;
   };
 
   const goToPrintable = () => {
